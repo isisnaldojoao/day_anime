@@ -36,7 +36,7 @@ function App() {
     
       <div className="calen-animes">
         <h1>Calendario <span>Animes</span>
-        <img src='assets\fairy-tail-happy-512x512.png'></img>
+        <img src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/50f05812-6489-49a6-8398-d922b6c13e36/d9c6rja-f61f37fa-3d6c-4cca-8088-a1ae0302ee72.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzUwZjA1ODEyLTY0ODktNDlhNi04Mzk4LWQ5MjJiNmMxM2UzNlwvZDljNnJqYS1mNjFmMzdmYS0zZDZjLTRjY2EtODA4OC1hMWFlMDMwMmVlNzIucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.NCdWiVOcw3CE3cARkiDnIGodGRkckr7qbN8OY25KtwQ'></img>
         </h1>
         <section className="week-animes">
           <div className="anime-day">
