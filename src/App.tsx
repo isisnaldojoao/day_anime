@@ -36,7 +36,7 @@ function App() {
     
       <div className="calen-animes">
         <h1>Calendario <span>Animes</span>
-        <img src='src\assets\fairy-tail-happy-512x512.png'></img>
+        <img src='assets\fairy-tail-happy-512x512.png'></img>
         </h1>
         <section className="week-animes">
           <div className="anime-day">
