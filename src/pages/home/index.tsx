@@ -73,24 +73,24 @@ export function Home() {
           {ativeDay.domingo && (
             <>
               <div className="anime">
-                <img src="https://opwiki.org/images/Egghead_Arc.jpg" alt="One Piece" />
-                <p>One Piece</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1094/143324.jpg" alt="Shikanoko Nokonoko" />
+                <p>Shikanoko Nokonoko</p>
               </div>
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1136/141839.jpg" alt="Shin no Nakama" />
-                <p>Shinigami Bocchan to Kuro Maid 3</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1107/143536.jpg" alt="Tower of God 2" />
+                <p>Tower of God 2</p>
               </div>
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1216/142086.jpg" alt="Kyuujitsu no Warumono-san" />
-                <p>Hibike! Euphonium 3</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1575/143115.jpg" alt="VTuber Nandaga Haishin Kiri" />
+                <p>VTuber Nandaga Haishin Kiri</p>
               </div>
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1876/141251.jpg" alt="Shangri-La Frontier" />
-                <p>Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2</p>
+                <img src="https://cdn.myanimelist.net/images/manga/1/224398.jpg" alt="Isekai Yururi Kikou: Kosodateshinagara" />
+                <p>Isekai Yururi Kikou: Kosodateshinagara</p>
               </div>
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1142/141351.jpg" alt="Ragna Crimson" />
-                <p>Ninja Kamui</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1430/143526.jpg" alt="Nanare Hananare" />
+                <p>Nanare Hananare</p>
               </div>
             </>
           )}
@@ -103,24 +103,20 @@ export function Home() {
             {ativeDay.segunda &&(
               <>
               <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/uU8JO4PsbgpuZmbkUMPjdpxEjBO.jpg" alt='Masamune-kun no Revenge'></img>
-              <p>Lv2 kara Cheat datta Motoyuusha </p>
+              <img src="https://cdn.myanimelist.net/images/anime/1281/144104.jpg" alt='Tsue to Tsurugi no Wistoria'></img>
+              <p>Tsue to Tsurugi no Wistoria</p>
             </div>
 
             <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1752/139314.jpg" alt='Tsuki ga Michibiku Isekai Douchuu'></img>
-              <p>Tsuki ga Michibiku Isekai Douchuu 2</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1700/143395.jpg" alt='Mayonaka Punch'></img>
+              <p>Mayonaka Punch</p>
             </div>
 
             <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/hXkohm9sjfQNovbwyp4xHNuW2r0.jpg" alt='Himesama "Goumon" no Jikan desu'></img>
-              <p>Ookami to Koushinryou: Merchant </p>
+              <img src="https://cdn.myanimelist.net/images/anime/1993/143335.jpg" alt='Kinnikuman: Kanpeki Chоujin Shiso-hen'></img>
+              <p>Kinnikuman: Kanpeki Chоujin Shiso-hen</p>
             </div>
 
-            <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/m47Ziq5bcYcOiaiIpFEnoQhySYY.jpg" alt='Nanatsu no Taizai: Mokushiroku no Yonkishi'></img>
-              <p>Kami wa Game ni Ueteiru Dublado</p>
-            </div>
 
               </>
             )}
@@ -134,18 +130,13 @@ export function Home() {
             {ativeDay.terca &&(
               <>
               <div className="anime">
-                <img src="https://image.tmdb.org/t/p/w185/r34i0W9jYsefZUfeusw77ytGe9O.jpg" alt='Shaman King (2021)'></img>
-                <p>Touken Ranbu Kai: Kyoden Moyuru Honnouji</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1007/141625.jpg" alt='Shinmai Ossan Boukensha'></img>
+                <p>Shinmai Ossan Boukensha</p>
               </div>
 
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1372/142242.jpg" alt='Akuyaku Reijou Level 99'></img>
-                <p>Boukyaku Battery (TV)</p>
-              </div>
-
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1143/142439.jpg" alt='Helck'></img>
-                <p>Unnamed Memory</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1518/143558.jpg" alt='Shy 2'></img>
+                <p>Shy 2</p>
               </div>
               </>
             )}
@@ -159,23 +150,23 @@ export function Home() {
             {ativeDay.quarta &&(
               <>
               <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1594/142521.jpg" alt='Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e'></img>
+              <img src="https://a.storyblok.com/f/178900/849x1200/96e38c101b/alya_sometimes_hides_her_feelings_in_russian_key_visual.jpg/m/filters:quality(95)format(webp)" alt='Kono Subarashii'></img>
+              <p>Tokidoki Bosotto Russia-go </p>
+              </div>
+
+              <div className="anime">
+              <img src="https://cdn.myanimelist.net/images/anime/1252/143457.jpg" alt='Isekai Shikkaku'></img>
+              <p>Isekai Shikkaku</p>
+              </div>
+
+              <div className="anime">
+              <img src="https://cdn.myanimelist.net/images/anime/1594/142521.jpg" alt='Kenka Dokugaku'></img>
               <p>Kenka Dokugaku</p>
               </div>
 
               <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1462/142547.jpg" alt='Mato Seihei no Slave'></img>
-              <p>Bartender: Kami no Glass</p>
-              </div>
-
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1758/141268.jpg" alt='Sengoku Youko'></img>
-              <p>Kono Subarashii Sekai ni Shukufuku wo! 3</p>
-              </div>
-
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1004/142114.jpg" alt='Sokushi Cheat ga Saikyou sugite'></img>
-              <p>Sand Land: The Series</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1315/142250.jpg" alt='Koi wa Futago de Warikirenai'></img>
+              <p>Koi wa Futago de Warikirenai</p>
               </div>
               </>
             )}
@@ -189,23 +180,23 @@ export function Home() {
             {ativeDay.quinta && (
               <>
               <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1861/141482.jpg" alt='Dungeon Meshi'></img>
-              <p>Henjin no Salad Bowl</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1644/142052.jpg" alt='Isekai Suicide Squad'></img>
+              <p>Isekai Suicide Squad</p>
               </div>
 
               <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/manga/2/212195.jpg" alt='Majo to Yajuu'></img>
-              <p>Maou no Ore ga Dorei Elf wo Yome</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1420/143707.jpg" alt='Gimai Seikatsu'></img>
+              <p>Gimai Seikatsu</p>
               </div>
 
               <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/c2wfIKUPcQY0tiyiOmY7ItHtNO9.jpg" alt='Gekkan Mousou Kagaku'></img>
-              <p>Wind Breaker</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1185/143359.jpg" alt='Tasogare Out Focus'></img>
+              <p>Tasogare Out Focus</p>
               </div>
 
               <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/oQDQgQ7fMx7BCcAt8OW79dXqd4t.jpg" alt='Yuzuki-san Chi no Yonkyouda'></img>
-              <p>Dungeon Meshi</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1660/143460.jpg" alt='Kimi to Boku no Saigo no Senjou'></img>
+              <p>Kimi to Boku no Saigo no Senjou</p>
               </div>
 
               </>
@@ -220,18 +211,23 @@ export function Home() {
             {ativeDay.sexta &&(
               <>
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1703/137216.jpg" alt='Pokemon (2023)'></img>
-                <p>Pokemon (2023)</p>
+                <img src="https://i0.wp.com/www.otakupt.com/wp-content/uploads/2024/05/The-Cafe-Terrace-and-Its-Goddesses-2-anime-visual-2.webp?resize=696%2C984&ssl=1" alt='Megami no Café Terrace 2'></img>
+                <p>Megami no Café Terrace 2</p>
               </div>
 
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1587/141789.jpg" alt='Sousou no Frieren'></img>
-                <p>Mahouka Koukou no Rettousei 3</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1342/142228.jpg" alt='Code Geass: Dakkan no Rozé'></img>
+                <p>Code Geass: Dakkan no Rozé</p>
               </div>
 
               <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1711/140515.jpg" alt='Saijaku Tamer'></img>
-                <p>Girls Band Cry</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1262/142076.jpg" alt='Bye Bye, Earth'></img>
+                <p>Bye Bye, Earth</p>
+              </div>
+
+              <div className="anime">
+                <img src="https://cdn.myanimelist.net/images/anime/1364/143539.jpg" alt='NieR Automata Ver1.1a Part 2'></img>
+                <p>NieR Automata Ver1.1a Part 2</p>
               </div>
 
               </>
@@ -246,28 +242,28 @@ export function Home() {
             {ativeDay.sabado && (
               <>
               <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1926/140799.jpg" alt='Solo Leveling'></img>
-              <p>Solo Leveling</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1244/138851.jpg" alt='One Piece'></img>
+              <p>One Piece</p>
             </div>
 
             <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1912/140804.jpg" alt='Horimiya: The Missing Pieces'></img>
-              <p>Mashle 2 Dublado</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1741/140952.jpg" alt='Monogatari Series: Off & Monster Season'></img>
+              <p>Monogatari Series: Off & Monster Season</p>
             </div>
 
             <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/A6JOsCdFFTxtbDnKAfE0iY6jOiE.jpg" alt='Ryza no Atelier'></img>
-              <p>Kaijuu 8-gou</p>
+              <img src="https://a.storyblok.com/f/178900/1984x2805/ea41558285/fairy-tail-100-years-quest-main-visual.jpg/m/filters:quality(95)format(webp)" alt='Fairy Tail: 100 Years Quest'></img>
+              <p>Fairy Tail: 100 Years Quest</p>
             </div>
 
             <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/baflpfvihSZCNsyTHZGBKkDIlXr.jpg" alt='Kekkon Yubiwa Monogatari'></img>
-              <p>The Fable</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1825/143408.jpg" alt='Atri: My Dear Moments'></img>
+              <p>Atri: My Dear Moments</p>
             </div>
 
             <div className="anime">
-              <img src="https://image.tmdb.org/t/p/w185/s2XOPfm4B5HVBgIhcGIzoJiwGJX.jpg" alt='Yubisaki to Renren'></img>
-              <p>Boku no Hero Academia: Memories</p>
+              <img src="https://animesinjapan.com.br/envios/2024/04/22/250e6c5a2018606dbc2b19dc074077ce.webp" alt='Make Heroine ga Oosugiru!'></img>
+              <p>Make Heroine ga Oosugiru!</p>
             </div>
               </>
             )}
