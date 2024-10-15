@@ -9,7 +9,7 @@ export function Menu(){
                         <li>Home</li>
                     </Link>
                     <Link to="/myanimes">
-                        <li>Meu animes</li>
+                        <li>Meus animes</li>
                     </Link>
                 </ul>
             </nav>
