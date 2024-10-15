@@ -30,7 +30,7 @@ export function MyAnimes() {
             <h1>Animes favoritos</h1>
             {animes.length === 0 ? (
                 <div>
-                    <img src="src/assets/hamtaro.png"/>
+                    <img src="https://i.imgur.com/F5LghWq.png"/>
                     <p>Você ainda não adicionou nenhum anime</p>
                 </div> 
             ) : (
