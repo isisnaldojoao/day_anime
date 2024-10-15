@@ -1,6 +1,7 @@
 import { useEffect,useState } from "react";
 import { useParams,useNavigate } from "react-router-dom";
 
+
 const server = 'https://kitsu.io/api/edge';
 
 interface Anime{
@@ -20,7 +21,7 @@ interface AnimeData{
 }
 
 
-export function Detail(){
+export function Search(){
     const [infoAnimes, setInfoAnimes] = useState<AnimeData>({ data:[] });
     const [loading, setLoading]= useState(true);
     const { anime }= useParams();
@@ -43,6 +44,12 @@ export function Detail(){
         getAnime();
     },[anime,navigate])
 
+
+    function handleDetail(animeId:string){
+
+        navigate(`/anime/${animeId}`);
+    }
+
     if(loading){
         return(
             <div>
@@ -55,7 +62,9 @@ export function Detail(){
         <div>
             <section className="anime-listen">
                 {infoAnimes.data.map((anime)=>(
-                    <div className="anime-list">
+                    <div 
+                    onClick={()=>handleDetail(`${anime.attributes.canonicalTitle}`)}
+                    className="anime-list">
                         <div  key={anime.id}>
                             <img 
                                 src={anime.attributes.posterImage.small}

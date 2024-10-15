@@ -5,7 +5,6 @@
 
 
 body{
-  
   padding: 15px;
   font-family: sans-serif;
   background: #151B26;
@@ -38,6 +37,34 @@ h1:hover{
   align-items: center;
   transition: 0.5s;
 }
+
+.menu-anime{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  max-width: 100%x;
+}
+
+
+.menu-anime ul{
+  background-color: var(--cor-primary);
+  color: var(--cor-second);
+  width: 650px;
+
+  height: 50px;
+  align-items: center;
+  list-style: none;
+  display: flex;
+  border-radius: 15px;
+  gap: 20px;
+}
+
+.menu-anime a{
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 
 .icon{
   display: flex;
@@ -155,11 +182,73 @@ button:hover{
   align-items: center;
   width: 300px;
   height: 550px;
+  cursor: pointer;
   background-color: var(--cor-second);
   border-radius: 10px;
   margin: 20px;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+.myAnime{
+  display: flex;
+  flex-direction: column;
+  max-width:100%;
+  align-items: center;
+}
+
+.animeMy{
+  max-width: 720px;
+}
+
+.addAnime{
+  align-items: center;
+  display: flex;
+}
+
+.addAnime button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animeFav{
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.favAnime{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.favAnime h4{
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.favAnime-title{
+  text-decoration: none;
+  outline: none;
+  list-style: none;
+  color: inherit;
+}
+
+.favAnime button{
+  width: 100px;
+  height: 50px;
+  background-color: red;
+  color: #fff;
+}
+
 
 @media only screen and (max-width: 720px) {
   h1{
@@ -172,6 +261,23 @@ button:hover{
   h1:hover{
     transform: scale(1.05);
   }
+
+  .menu-anime {
+    max-width: 80%;
+    margin-left: 20px;
+  }
+
+  .menu-anime ul{
+    width: 60%;
+    gap: 10px;
+    
+  }
+
+  .menu-anime nav{
+    width: 100%;
+    
+  }
+  
   
   .anime-header{
     display: flex;
@@ -259,6 +365,65 @@ button:hover{
     border-radius: 10px;
     margin: 20px;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .myAnime {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .addAnime {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  
+  .addAnime button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .myAnime{
+    display: flex;
+    max-width: 100%;
+  }
+
+  .animeMy{
+    display: flex;
+    flex-direction: column;
+    justify-content:center ;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .animeFav{
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+  }
+
+  .favAnime{
+    text-align: center;
+    display: flex;
+    width: 200px;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 15px;
   }
 
   

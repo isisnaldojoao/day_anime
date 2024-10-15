@@ -1,8 +1,10 @@
 import { createBrowserRouter} from 'react-router-dom';
 
 import { Home } from './pages/home';
-import { Detail } from './pages/detail';
+import { Search } from './pages/search';
 import { Notfound } from './pages/notfound';
+import { Anime } from './pages/animes';
+import { MyAnimes } from './pages/myanimes'
 
 import { Layout } from './components/layout'
 
@@ -15,8 +17,16 @@ const router = createBrowserRouter([
                 element: <Home/>
             },
             {
-                path:"/detail/:anime",
-                element: <Detail/>
+                path:"/search/:anime",
+                element: <Search/>
+            },
+            {
+                path:"/anime/:name",
+                element: <Anime/>
+            },
+            {
+                path:"/myanimes",
+                element: <MyAnimes/>
             },
             {
                 path: "*",

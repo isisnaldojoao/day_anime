@@ -1,9 +1,9 @@
 import { FormEvent, useState} from 'react';
+import { motion } from 'framer-motion'; // Importando o motion
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Search } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom';
 
 type ActiveDays = {
   domingo: boolean;
@@ -15,10 +15,31 @@ type ActiveDays = {
   sabado: boolean;
 };
 
+const container = {
+  hidden: { opacity: 1, scale: 0 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delayChildren: 0.3,
+      staggerChildren: 0.2
+    }
+  }
+}
+  
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1
+  }
+}
+
 
 export function Home() {
   const [input, setInput] = useState("");
   const navigate = useNavigate();
+
 
   const [ativeDay,setAtiveDay] =useState<ActiveDays>({
     domingo: false,
@@ -43,8 +64,14 @@ export function Home() {
 
     if(input === "") return;
 
-    navigate(`/detail/${input}`);
+    navigate(`/search/${input}`);
   }
+
+  function handleDetail(anime:string){
+
+    navigate(`/anime/${anime}`);
+  }
+
 
   return (
     
@@ -66,55 +93,91 @@ export function Home() {
           </button>
         </form>
 
-        <section className="week-animes">
-        <button onClick={() => handleAtive('domingo')}>Domingo</button>
+        <motion.div 
+        variants={container} 
+        initial="hidden" 
+        animate="visible" 
+        className="week-animes" >
+        <motion.button 
+        variants={item} 
+        onClick={() => handleAtive('domingo')}>Domingo</motion.button>
           <div className="anime-day">
           
           {ativeDay.domingo && (
             <>
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1094/143324.jpg" alt="Shikanoko Nokonoko" />
-                <p>Shikanoko Nokonoko</p>
+              <div 
+              onClick={()=>handleDetail('Nageki no Bourei wa Intai shitai')}
+              className="anime">
+                <img src="https://cdn.myanimelist.net/images/anime/1679/145660.jpg" alt="Nageki no Bourei wa Intai shitai" />
+                <p>Nageki no Bourei wa Intai shitai</p>
               </div>
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1107/143536.jpg" alt="Tower of God 2" />
-                <p>Tower of God 2</p>
+              <div 
+              onClick={()=>handleDetail('Tensei Kizoku, Kantei Skill de Nariagaru (As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill to Rise in the World)')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143705l-213x300.jpg" alt="Tensei Kizoku 2" />
+                <p>Tensei Kizoku 2</p>
               </div>
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1575/143115.jpg" alt="VTuber Nandaga Haishin Kiri" />
-                <p>VTuber Nandaga Haishin Kiri</p>
+              <div 
+              onClick={()=>handleDetail('Nanatsu no Taizai: Mokushiroku no Yonkishi 2')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144010l-206x300.jpg" alt="Nanatsu no Taizai: Mokushiroku no Yonkishi 2" />
+                <p>Nanatsu no Taizai: Mokushiroku no Yonkishi 2 </p>
               </div>
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/manga/1/224398.jpg" alt="Isekai Yururi Kikou: Kosodateshinagara" />
-                <p>Isekai Yururi Kikou: Kosodateshinagara</p>
+              <div 
+              onClick={()=>handleDetail('Shangri-La Frontier 2')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144794l-213x300.jpg" alt="Shangri-La Frontier 2" />
+                <p>Shangri-La Frontier 2</p>
               </div>
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1430/143526.jpg" alt="Nanare Hananare" />
-                <p>Nanare Hananare</p>
+              <div 
+              onClick={()=>handleDetail('Tsuma Shougakusei ni Naru (If my wife [became] an elementary school student)')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/141701l-212x300.jpg" alt="Tsuma Shougakusei ni Naru (If my wife [became] an elementary school student)" />
+                <p>Tsuma Shougakusei ni Naru (If my wife [became] an elementary school student)</p>
               </div>
             </>
           )}
           </div>
-        </section>
+        </motion.div>
 
-        <section className="week-animes">
-        <button onClick={() => handleAtive('segunda')}>Segunda-feira</button>
-          <div className="anime-day">
+        <motion.div
+        variants={container} 
+        initial="hidden" 
+        animate="visible" 
+        className="week-animes" >
+        <motion.button
+        variants={item} 
+        onClick={() => handleAtive('segunda')}>Segunda-feira</motion.button>
+          <div 
+          className="anime-day">
             {ativeDay.segunda &&(
               <>
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1281/144104.jpg" alt='Tsue to Tsurugi no Wistoria'></img>
-              <p>Tsue to Tsurugi no Wistoria</p>
+              <div 
+              onClick={()=>handleDetail('Goukon ni Ittara Onna ga Inakatta Hanashi')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/138928l-213x300.jpg" alt='Goukon ni Ittara Onna ga Inakatta Hanashi'></img>
+              <p>Goukon ni Ittara Onna ga Inakatta Hanashi</p>
             </div>
 
-            <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1700/143395.jpg" alt='Mayonaka Punch'></img>
-              <p>Mayonaka Punch</p>
+            <div 
+            onClick={()=>handleDetail('Kamonohashi Ron no Kindan Suiri II (Ron Kamonohashi: Deranged Detective II)')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144334l-213x300.jpg" alt='Kamonohashi Ron no Kindan Suiri II (Ron Kamonohashi: Deranged Detective II)'></img>
+              <p>Kamonohashi Ron no Kindan Suiri II (Ron Kamonohashi: Deranged Detective II)</p>
             </div>
 
-            <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1993/143335.jpg" alt='Kinnikuman: Kanpeki Chоujin Shiso-hen'></img>
-              <p>Kinnikuman: Kanpeki Chоujin Shiso-hen</p>
+            <div 
+            onClick={()=>handleDetail(' Raise wa Tanin ga Ii (Yakuza Fiance: Raise wa Tanin ga Ii)')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143773l-215x300.jpg" alt=' Raise wa Tanin ga Ii (Yakuza Fiance: Raise wa Tanin ga Ii)'></img>
+              <p> Raise wa Tanin ga Ii (Yakuza Fiance: Raise wa Tanin ga Ii)</p>
+            </div>
+
+            <div 
+            onClick={()=>handleDetail('Seirei Gensouki – Spirit Chronicles 2')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144583l-212x300.jpg" alt='Seirei Gensouki – Spirit Chronicles 2'></img>
+              <p>Seirei Gensouki – Spirit Chronicles 2</p>
             </div>
 
 
@@ -122,149 +185,234 @@ export function Home() {
             )}
 
           </div>
-        </section>
+        </motion.div>
         
-        <section className="week-animes">
-        <button onClick={() => handleAtive('terca')}>Terça-feira</button>
+        <motion.div
+        variants={container} 
+        initial="hidden" 
+        animate="visible"
+        className="week-animes" >
+        <motion.button
+        variants={item}
+        onClick={() => handleAtive('terca')}>Terça-feira</motion.button>
           <div className="anime-day">
             {ativeDay.terca &&(
               <>
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1007/141625.jpg" alt='Shinmai Ossan Boukensha'></img>
-                <p>Shinmai Ossan Boukensha</p>
+              <div 
+              onClick={()=>handleDetail('Rekishi Ni Nokoru Akujo Ni Naru Zo: Akuyaku Reijou Ni Naru Hodo Ouji No Dekiai Wa Kasoku Suru You Desu! (I’ll Become A Villainess That Will Go Down In History ― The More Of A Villainess I Become, The More The Prince Will Dote On Me)')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143925l-212x300.jpg" alt='Shinmai Ossan Boukensha'></img>
+                <p>Rekishi Ni Nokoru Akujo Ni Naru Zo</p>
               </div>
 
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1518/143558.jpg" alt='Shy 2'></img>
-                <p>Shy 2</p>
+              <div 
+              onClick={()=>handleDetail('Amagami-san Chi no Enmusub')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143586l-202x300.jpg" alt='Amagami-san Chi no Enmusub'></img>
+                <p>Amagami-san Chi no Enmusub</p>
+              </div>
+
+              <div 
+              onClick={()=>handleDetail('Youkai Gakkou no Sensei Hajimemashita!')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144805l-213x300.jpg" alt='Youkai Gakkou no Sensei Hajimemashita!'></img>
+                <p>Youkai Gakkou no Sensei Hajimemashita!</p>
               </div>
               </>
             )}
             </div>
-        </section>
+        </motion.div>
         
 
-        <section className="week-animes">
-        <button onClick={() => handleAtive('quarta')}>Quarta-feira</button>
-          <div className="anime-day">
+        <motion.div
+         variants={container} 
+         initial="hidden" 
+         animate="visible" 
+        className="week-animes">
+        <motion.button 
+        variants={item}
+        onClick={() => handleAtive('quarta')}>Quarta-feira</motion.button>
+          <div 
+          className="anime-day">
             {ativeDay.quarta &&(
               <>
-              <div className="anime">
-              <img src="https://a.storyblok.com/f/178900/849x1200/96e38c101b/alya_sometimes_hides_her_feelings_in_russian_key_visual.jpg/m/filters:quality(95)format(webp)" alt='Kono Subarashii'></img>
-              <p>Tokidoki Bosotto Russia-go </p>
+              <div 
+              onClick={()=>handleDetail('Re:Zero 3')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/134750l-211x300.jpg" alt='Re:Zero 3'></img>
+              <p>Re:Zero 3</p>
               </div>
 
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1252/143457.jpg" alt='Isekai Shikkaku'></img>
-              <p>Isekai Shikkaku</p>
+              <div 
+              onClick={()=>handleDetail('Acro Trip')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/141196l-212x300.jpg" alt='Acro Trip'></img>
+              <p>Acro Trip</p>
               </div>
 
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1594/142521.jpg" alt='Kenka Dokugaku'></img>
-              <p>Kenka Dokugaku</p>
+              <div 
+              onClick={()=>handleDetail('The Prince of Tennis U-17 World CUP(2º temporada)')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144788l-212x300.jpg" alt='The Prince of Tennis U-17 World CUP(2º temporada)'></img>
+              <p>The Prince of Tennis U-17 World CUP(2º temporada)</p>
               </div>
 
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1315/142250.jpg" alt='Koi wa Futago de Warikirenai'></img>
-              <p>Koi wa Futago de Warikirenai</p>
+              <div 
+              onClick={()=>handleDetail('TRILLION GAME')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142237l-212x300.jpg" alt='TRILLION GAME'></img>
+              <p>TRILLION GAME</p>
               </div>
               </>
             )}
           </div>
-        </section>
+        </motion.div>
         
 
-        <section className="week-animes">
-        <button onClick={() => handleAtive('quinta')}>Quinta-feira</button>
+        <motion.div
+         variants={container} 
+         initial="hidden" 
+         animate="visible"
+        className="week-animes" >
+        <motion.button 
+        variants={item}
+        onClick={() => handleAtive('quinta')}>Quinta-feira</motion.button>
           <div className="anime-day">
             {ativeDay.quinta && (
               <>
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1644/142052.jpg" alt='Isekai Suicide Squad'></img>
-              <p>Isekai Suicide Squad</p>
+              <div 
+              onClick={()=>handleDetail('Ao no Hako')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144061l-213x300.jpg" alt='Ao no Hako'></img>
+              <p>Ao no Hako</p>
               </div>
 
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1420/143707.jpg" alt='Gimai Seikatsu'></img>
-              <p>Gimai Seikatsu</p>
+              <div 
+              onClick={()=>handleDetail('Hitoribocchi no Isekai Kouryaku (LONER LIFE IN ANOTHER WORLD)')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144351l-207x300.jpg" alt='Hitoribocchi no Isekai Kouryaku (LONER LIFE IN ANOTHER WORLD)'></img>
+              <p>Hitoribocchi no Isekai Kouryaku (LONER LIFE IN ANOTHER WORLD)</p>
               </div>
 
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1185/143359.jpg" alt='Tasogare Out Focus'></img>
-              <p>Tasogare Out Focus</p>
+              <div 
+              onClick={()=>handleDetail('Dungeon ni Deia 5')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/09/141890l-213x300.jpg" alt='Dungeon ni Deia 5'></img>
+              <p>Dungeon ni Deia 5</p>
               </div>
 
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1660/143460.jpg" alt='Kimi to Boku no Saigo no Senjou'></img>
-              <p>Kimi to Boku no Saigo no Senjou</p>
+              <div 
+              onClick={()=>handleDetail('Dandadan')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/09/142082l-212x300.jpg" alt='Dandadan'></img>
+              <p>Dandadan</p>
               </div>
 
               </>
             )}
           </div>
-        </section>
+        </motion.div>
         
 
-        <section className="week-animes">
-        <button onClick={() => handleAtive('sexta')}>Sexta-feira</button>
+        <motion.div 
+         variants={container} 
+         initial="hidden" 
+         animate="visible" 
+        className="week-animes"  >
+        <motion.button
+        variants={item}
+        onClick={() => handleAtive('sexta')}>Sexta-feira</motion.button>
           <div className="anime-day">
             {ativeDay.sexta &&(
               <>
-              <div className="anime">
-                <img src="https://i0.wp.com/www.otakupt.com/wp-content/uploads/2024/05/The-Cafe-Terrace-and-Its-Goddesses-2-anime-visual-2.webp?resize=696%2C984&ssl=1" alt='Megami no Café Terrace 2'></img>
-                <p>Megami no Café Terrace 2</p>
+              <div 
+              onClick={()=>handleDetail('Dragon Ball DAIMA')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144336l-212x300.jpg" alt='Dragon Ball DAIMA'></img>
+                <p>Dragon Ball DAIMA</p>
               </div>
 
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1342/142228.jpg" alt='Code Geass: Dakkan no Rozé'></img>
-                <p>Code Geass: Dakkan no Rozé</p>
+              <div 
+              onClick={()=>handleDetail('MAGILUMIERE CO. LTD. (Kabushiki Gaisha Magi Lumiere)')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142137l-213x300.jpg" alt='MAGILUMIERE CO. LTD. (Kabushiki Gaisha Magi Lumiere)'></img>
+                <p>MAGILUMIERE CO. LTD. (Kabushiki Gaisha Magi Lumiere)</p>
               </div>
 
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1262/142076.jpg" alt='Bye Bye, Earth'></img>
-                <p>Bye Bye, Earth</p>
+              <div 
+              onClick={()=>handleDetail('Sword Art Online Alternative – Guns Gale Online 2')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142246l-213x300.jpg" alt='Sword Art Online Alternative – Guns Gale Online 2'></img>
+                <p>Sword Art Online Alternative – Guns Gale Online 2</p>
               </div>
 
-              <div className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1364/143539.jpg" alt='NieR Automata Ver1.1a Part 2'></img>
-                <p>NieR Automata Ver1.1a Part 2</p>
+              <div 
+              onClick={()=>handleDetail('Touhai')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/140848l-212x300.jpg" alt='Touhai'></img>
+                <p>Touhai</p>
               </div>
 
               </>
             )}
           </div>
-        </section>
+        </motion.div>
         
 
-        <section className="week-animes">
-        <button onClick={() => handleAtive('sabado')}>Sabado</button>
+        <motion.div
+         variants={container} 
+         initial="hidden" 
+         animate="visible"
+        className="week-animes" >
+        <motion.button
+        variants={item}
+        onClick={() => handleAtive('sabado')}>Sabado</motion.button>
           <div className="anime-day">
             {ativeDay.sabado && (
               <>
-              <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1244/138851.jpg" alt='One Piece'></img>
-              <p>One Piece</p>
+              <div 
+              onClick={()=>handleDetail('Maou-sama Retry! R')}
+              className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142080l-213x300.jpg" alt='Maou-sama Retry! R'></img>
+              <p>Maou-sama Retry! R</p>
             </div>
 
-            <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1741/140952.jpg" alt='Monogatari Series: Off & Monster Season'></img>
-              <p>Monogatari Series: Off & Monster Season</p>
+            <div 
+            onClick={()=>handleDetail('Bleach: Sennen Kessen-hen – Soukoku-tan')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144074l-213x300.jpg" alt='Bleach: Sennen Kessen-hen – Soukoku-tan'></img>
+              <p>Bleach: Sennen Kessen-hen – Soukoku-tan</p>
             </div>
 
-            <div className="anime">
-              <img src="https://a.storyblok.com/f/178900/1984x2805/ea41558285/fairy-tail-100-years-quest-main-visual.jpg/m/filters:quality(95)format(webp)" alt='Fairy Tail: 100 Years Quest'></img>
-              <p>Fairy Tail: 100 Years Quest</p>
+            <div 
+            onClick={()=>handleDetail('BLUE LOCK VS. U-20 JAPAN')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143377l-213x300.jpg" alt='BLUE LOCK VS. U-20 JAPAN'></img>
+              <p>BLUE LOCK VS. U-20 JAPAN</p>
             </div>
 
-            <div className="anime">
-              <img src="https://cdn.myanimelist.net/images/anime/1825/143408.jpg" alt='Atri: My Dear Moments'></img>
-              <p>Atri: My Dear Moments</p>
+            <div 
+            onClick={()=>handleDetail('Chi: Chikyuu no Undou ni Tsuite (Chi: On the Movements of the Earth)')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144437l-212x300.jpg" alt='Chi: Chikyuu no Undou ni Tsuite (Chi: On the Movements of the Earth)'></img>
+              <p>Chi: Chikyuu no Undou ni Tsuite (Chi: On the Movements of the Earth)</p>
             </div>
 
-            <div className="anime">
-              <img src="https://animesinjapan.com.br/envios/2024/04/22/250e6c5a2018606dbc2b19dc074077ce.webp" alt='Make Heroine ga Oosugiru!'></img>
-              <p>Make Heroine ga Oosugiru!</p>
+            <div 
+            onClick={()=>handleDetail('Ao no Exorcist: Yuki no Hate-hen')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144043l-213x300.jpg" alt='Ao no Exorcist III parte 2'></img>
+              <p>Ao no Exorcist III parte 2</p>
             </div>
+
+
+            <div 
+            onClick={()=>handleDetail('Ranma1/2')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144299l-213x300.jpg" alt='Ranma1/2'></img>
+              <p>Ranma1/2</p>
+            </div>
+
               </>
             )}
 
@@ -272,7 +420,7 @@ export function Home() {
           </div>
 
           
-        </section>
+        </motion.div>
 
         <div>Feito por<span> João Isisnaldo</span></div>
   
