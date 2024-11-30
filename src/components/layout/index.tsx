@@ -11,7 +11,7 @@ export function Layout(){
             <Header/>
             <Menu/>
             <Outlet/>
-            <SpeedInsights
+            <SpeedInsights />
         </>
     )
 }
