@@ -98,7 +98,7 @@ export function Anime (){
                     onClick={()=>addFav(anime.attributes.canonicalTitle)}
                     >
                     <CirclePlus/>
-                    Adicionar aos favoritos
+                    Adicionar aos favoritoss
                     </button> 
                     <button
                     onClick={()=>removeFav(anime.attributes.canonicalTitle)}
