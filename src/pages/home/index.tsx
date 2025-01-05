@@ -106,34 +106,28 @@ export function Home() {
           {ativeDay.domingo && (
             <>
               <div 
-              onClick={()=>handleDetail('Nageki no Bourei wa Intai shitai')}
+              onClick={()=>handleDetail('Kisaki Kyouiku kara Nigetai')}
               className="anime">
-                <img src="https://cdn.myanimelist.net/images/anime/1679/145660.jpg" alt="Nageki no Bourei wa Intai shitai" />
-                <p>Nageki no Bourei wa Intai shitai</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1711/146319.jpg" alt="Nageki no Bourei wa Intai shitai" />
+                <p>Kisaki Kyouiku kara Nigetai</p>
               </div>
               <div 
-              onClick={()=>handleDetail('Tensei Kizoku, Kantei Skill de Nariagaru (As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill to Rise in the World)')}
+              onClick={()=>handleDetail('Jibaku Shounen Hanako-kun 2')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143705l-213x300.jpg" alt="Tensei Kizoku 2" />
-                <p>Tensei Kizoku 2</p>
+                <img src="https://cdn.myanimelist.net/images/anime/1878/146291.jpg" alt="Jibaku Shounen Hanako-kun 2" />
+                <p>Jibaku Shounen Hanako-kun 2</p>
               </div>
               <div 
-              onClick={()=>handleDetail('Nanatsu no Taizai: Mokushiroku no Yonkishi 2')}
+              onClick={()=>handleDetail('Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo II')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144010l-206x300.jpg" alt="Nanatsu no Taizai: Mokushiroku no Yonkishi 2" />
-                <p>Nanatsu no Taizai: Mokushiroku no Yonkishi 2 </p>
+                <img src="https://cdn.myanimelist.net/images/anime/1093/145470.jpg" alt="Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo II" />
+                <p>Kimi no Koto ga Daidaidaidaidaisuki na 100-nin no Kanojo II</p>
               </div>
               <div 
-              onClick={()=>handleDetail('Shangri-La Frontier 2')}
+              onClick={()=>handleDetail('Sentai Red Isekai')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144794l-213x300.jpg" alt="Shangri-La Frontier 2" />
-                <p>Shangri-La Frontier 2</p>
-              </div>
-              <div 
-              onClick={()=>handleDetail('Tsuma Shougakusei ni Naru (If my wife [became] an elementary school student)')}
-              className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/141701l-212x300.jpg" alt="Tsuma Shougakusei ni Naru (If my wife [became] an elementary school student)" />
-                <p>Tsuma Shougakusei ni Naru (If my wife [became] an elementary school student)</p>
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144703l-320x453.jpg" alt="Sentai Red Isekai" />
+                <p>Sentai Red Isekai</p>
               </div>
             </>
           )}
@@ -153,34 +147,25 @@ export function Home() {
             {ativeDay.segunda &&(
               <>
               <div 
-              onClick={()=>handleDetail('Goukon ni Ittara Onna ga Inakatta Hanashi')}
+              onClick={()=>handleDetail('Watashi no Shiawase na Kekkon 2')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/138928l-213x300.jpg" alt='Goukon ni Ittara Onna ga Inakatta Hanashi'></img>
-              <p>Goukon ni Ittara Onna ga Inakatta Hanashi</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1946/146770.jpg" alt='Watashi no Shiawase na Kekkon 2'></img>
+              <p>Watashi no Shiawase na Kekkon 2</p>
             </div>
 
             <div 
-            onClick={()=>handleDetail('Kamonohashi Ron no Kindan Suiri II (Ron Kamonohashi: Deranged Detective II)')}
+            onClick={()=>handleDetail('Kono Kaisha ni Suki na Hito ga Imasu')}
             className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144334l-213x300.jpg" alt='Kamonohashi Ron no Kindan Suiri II (Ron Kamonohashi: Deranged Detective II)'></img>
-              <p>Kamonohashi Ron no Kindan Suiri II (Ron Kamonohashi: Deranged Detective II)</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/146384l-320x451.jpg" alt='Kono Kaisha ni Suki na Hito ga Imasu'></img>
+              <p>Kono Kaisha ni Suki na Hito ga Imasu</p>
             </div>
 
             <div 
-            onClick={()=>handleDetail(' Raise wa Tanin ga Ii (Yakuza Fiance: Raise wa Tanin ga Ii)')}
+            onClick={()=>handleDetail('Kuroiwa Medaka')}
             className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143773l-215x300.jpg" alt=' Raise wa Tanin ga Ii (Yakuza Fiance: Raise wa Tanin ga Ii)'></img>
-              <p> Raise wa Tanin ga Ii (Yakuza Fiance: Raise wa Tanin ga Ii)</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/146404l-320x466.jpg" alt='Kuroiwa Medaka'></img>
+              <p>Kuroiwa Medaka</p>
             </div>
-
-            <div 
-            onClick={()=>handleDetail('Seirei Gensouki – Spirit Chronicles 2')}
-            className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144583l-212x300.jpg" alt='Seirei Gensouki – Spirit Chronicles 2'></img>
-              <p>Seirei Gensouki – Spirit Chronicles 2</p>
-            </div>
-
-
               </>
             )}
 
@@ -199,35 +184,44 @@ export function Home() {
             {ativeDay.terca &&(
               <>
               <div 
-              onClick={()=>handleDetail('Rekishi Ni Nokoru Akujo Ni Naru Zo: Akuyaku Reijou Ni Naru Hodo Ouji No Dekiai Wa Kasoku Suru You Desu! (I’ll Become A Villainess That Will Go Down In History ― The More Of A Villainess I Become, The More The Prince Will Dote On Me)')}
+              onClick={()=>handleDetail('Fate/strange Fake')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143925l-212x300.jpg" alt='Shinmai Ossan Boukensha'></img>
-                <p>Rekishi Ni Nokoru Akujo Ni Naru Zo</p>
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/136845l-211x300.jpg" alt='Fate/strange Fake'></img>
+                <p>Fate/strange Fake</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Amagami-san Chi no Enmusub')}
+              onClick={()=>handleDetail('Hazure Skill')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143586l-202x300.jpg" alt='Amagami-san Chi no Enmusub'></img>
-                <p>Amagami-san Chi no Enmusub</p>
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/146128l-320x453.jpg" alt='Hazure Skill'></img>
+                <p>Hazure Skill</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Youkai Gakkou no Sensei Hajimemashita!')}
+              onClick={()=>handleDetail('Unnamed Memory II')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144805l-213x300.jpg" alt='Youkai Gakkou no Sensei Hajimemashita!'></img>
-                <p>Youkai Gakkou no Sensei Hajimemashita!</p>
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/143723l-320x453.jpg" alt='Unnamed Memory 2'></img>
+                <p>Unnamed Memory II</p>
               </div>
+
+              <div 
+              onClick={()=>handleDetail('Hana wa Saku, Shura no Gotoku')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/145426l-320x453.jpg" alt='Hana wa Saku, Shura no Gotoku'></img>
+                <p>Hana wa Saku, Shura no Gotoku</p>
+              </div>
+
               </>
+              
             )}
             </div>
         </motion.div>
         
 
         <motion.div
-         variants={container} 
-         initial="hidden" 
-         animate="visible" 
+        variants={container} 
+        initial="hidden" 
+        animate="visible" 
         className="week-animes">
         <motion.button 
         variants={item}
@@ -237,31 +231,31 @@ export function Home() {
             {ativeDay.quarta &&(
               <>
               <div 
-              onClick={()=>handleDetail('Re:Zero 3')}
+              onClick={()=>handleDetail('Izure Saikyou no Renkinjutsushi? ')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/134750l-211x300.jpg" alt='Re:Zero 3'></img>
-              <p>Re:Zero 3</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/142918l-320x452.jpg" alt='Izure Saikyou no Renkinjutsushi? '></img>
+              <p>Izure Saikyou no Renkinjutsushi? </p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Acro Trip')}
+              onClick={()=>handleDetail('Salaryman ga Isekai ni Ittara Shitennou ni Natta Hanashi')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/141196l-212x300.jpg" alt='Acro Trip'></img>
-              <p>Acro Trip</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144352l-320x452.jpg" alt='Salaryman ga Isekai ni Ittara Shitennou ni Natta Hanashi'></img>
+              <p>Salaryman ga Isekai ni Ittara Shitennou ni Natta Hanashi</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('The Prince of Tennis U-17 World CUP(2º temporada)')}
+              onClick={()=>handleDetail('Ameku Takao no Suiri Karte')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144788l-212x300.jpg" alt='The Prince of Tennis U-17 World CUP(2º temporada)'></img>
-              <p>The Prince of Tennis U-17 World CUP(2º temporada)</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/145508l-213x300.jpg" alt='Ameku Takao no Suiri Karte'></img>
+              <p>Ameku Takao no Suiri Karte</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('TRILLION GAME')}
+              onClick={()=>handleDetail('Grisaia: Phantom Trigger')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142237l-212x300.jpg" alt='TRILLION GAME'></img>
-              <p>TRILLION GAME</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/142188l-212x300.jpg" alt='Grisaia: Phantom Trigger'></img>
+              <p>Grisaia: Phantom Trigger</p>
               </div>
               </>
             )}
@@ -270,9 +264,9 @@ export function Home() {
         
 
         <motion.div
-         variants={container} 
-         initial="hidden" 
-         animate="visible"
+        variants={container} 
+        initial="hidden" 
+        animate="visible"
         className="week-animes" >
         <motion.button 
         variants={item}
@@ -281,31 +275,31 @@ export function Home() {
             {ativeDay.quinta && (
               <>
               <div 
-              onClick={()=>handleDetail('Ao no Hako')}
+              onClick={()=>handleDetail('Momentary Lily')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144061l-213x300.jpg" alt='Ao no Hako'></img>
-              <p>Ao no Hako</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/143656l-212x300.jpg" alt='Momentary Lily'></img>
+              <p>Momentary Lily</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Hitoribocchi no Isekai Kouryaku (LONER LIFE IN ANOTHER WORLD)')}
+              onClick={()=>handleDetail('BanG Dream! Ave Mujica')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144351l-207x300.jpg" alt='Hitoribocchi no Isekai Kouryaku (LONER LIFE IN ANOTHER WORLD)'></img>
-              <p>Hitoribocchi no Isekai Kouryaku (LONER LIFE IN ANOTHER WORLD)</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144030l-320x411.jpg" alt='BanG Dream! Ave Mujica'></img>
+              <p>BanG Dream! Ave Mujica</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Dungeon ni Deia 5')}
+              onClick={()=>handleDetail('Honey Lemon Soda')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/09/141890l-213x300.jpg" alt='Dungeon ni Deia 5'></img>
-              <p>Dungeon ni Deia 5</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144602l-320x452.jpg" alt='Honey Lemon Soda'></img>
+              <p>Honey Lemon Soda</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Dandadan')}
+              onClick={()=>handleDetail('Dr. Stone: Science Future')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/09/142082l-212x300.jpg" alt='Dandadan'></img>
-              <p>Dandadan</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/146479l-320x452.jpg" alt='Dr. Stone: Science Future'></img>
+              <p>Dr. Stone: Science Future</p>
               </div>
 
               </>
@@ -315,9 +309,9 @@ export function Home() {
         
 
         <motion.div 
-         variants={container} 
-         initial="hidden" 
-         animate="visible" 
+        variants={container} 
+        initial="hidden" 
+        animate="visible" 
         className="week-animes"  >
         <motion.button
         variants={item}
@@ -333,24 +327,45 @@ export function Home() {
               </div>
 
               <div 
-              onClick={()=>handleDetail('MAGILUMIERE CO. LTD. (Kabushiki Gaisha Magi Lumiere)')}
+              onClick={()=>handleDetail('Class no Dai Kirai na Joshi to Kekkon suru Koto ni Natta ')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142137l-213x300.jpg" alt='MAGILUMIERE CO. LTD. (Kabushiki Gaisha Magi Lumiere)'></img>
-                <p>MAGILUMIERE CO. LTD. (Kabushiki Gaisha Magi Lumiere)</p>
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144611l-213x300.jpg" alt='Class no Dai Kirai na Joshi to Kekkon suru Koto ni Natta'></img>
+                <p>Class no Dai Kirai na Joshi to Kekkon suru Koto ni Natta</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Sword Art Online Alternative – Guns Gale Online 2')}
+              onClick={()=>handleDetail('Sorairo Utility (Sky Blue Utility)')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142246l-213x300.jpg" alt='Sword Art Online Alternative – Guns Gale Online 2'></img>
-                <p>Sword Art Online Alternative – Guns Gale Online 2</p>
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/143332l-213x300.jpg" alt='Sorairo Utility (Sky Blue Utility)'></img>
+                <p>Sorairo Utility (Sky Blue Utility)</p>
               </div>
 
               <div 
-              onClick={()=>handleDetail('Touhai')}
+              onClick={()=>handleDetail('Nihon e Youkoso Elf-san')}
               className="anime">
-                <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/140848l-212x300.jpg" alt='Touhai'></img>
-                <p>Touhai</p>
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/142047l-213x300.jpg" alt='Nihon e Youkoso Elf-san'></img>
+                <p>Nihon e Youkoso Elf-san</p>
+              </div>
+
+              <div 
+              onClick={()=>handleDetail('Kusuriya no Hitorigoto II (The Apothecary Diaries II)')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/142240l-212x300.jpg" alt='Kusuriya no Hitorigoto II (The Apothecary Diaries II)'></img>
+                <p>Kusuriya no Hitorigoto II (The Apothecary Diaries II)</p>
+              </div>
+
+              <div 
+              onClick={()=>handleDetail('Guild no Uketsukejou desu ga')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144608l-213x300.jpg" alt='Guild no Uketsukejou desu ga'></img>
+                <p>Guild no Uketsukejou desu ga</p>
+              </div>
+
+              <div 
+              onClick={()=>handleDetail('ÜBEL BLATT (Ubel Blatt)')}
+              className="anime">
+                <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144045l-217x300.jpg" alt='ÜBEL BLATT (Ubel Blatt)'></img>
+                <p>ÜBEL BLATT (Ubel Blatt)</p>
               </div>
 
               </>
@@ -360,9 +375,9 @@ export function Home() {
         
 
         <motion.div
-         variants={container} 
-         initial="hidden" 
-         animate="visible"
+        variants={container} 
+        initial="hidden" 
+        animate="visible"
         className="week-animes" >
         <motion.button
         variants={item}
@@ -371,46 +386,53 @@ export function Home() {
             {ativeDay.sabado && (
               <>
               <div 
-              onClick={()=>handleDetail('Maou-sama Retry! R')}
+              onClick={()=>handleDetail('Solo Leveling 2')}
               className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/142080l-213x300.jpg" alt='Maou-sama Retry! R'></img>
-              <p>Maou-sama Retry! R</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/145502l-320x452.jpg" alt='Solo Leveling 2'></img>
+              <p>Solo Leveling 2</p>
             </div>
 
             <div 
-            onClick={()=>handleDetail('Bleach: Sennen Kessen-hen – Soukoku-tan')}
+            onClick={()=>handleDetail('Ao no Exorcist Yosuga-hen')}
             className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144074l-213x300.jpg" alt='Bleach: Sennen Kessen-hen – Soukoku-tan'></img>
-              <p>Bleach: Sennen Kessen-hen – Soukoku-tan</p>
+              <img src="https://cdn.myanimelist.net/images/anime/1390/147040.jpg" alt='Ao no Exorcist Yosuga-hen'></img>
+              <p>Ao no Exorcist Yosuga-hen</p>
             </div>
 
             <div 
-            onClick={()=>handleDetail('BLUE LOCK VS. U-20 JAPAN')}
+            onClick={()=>handleDetail('Okinawa de Suki')}
             className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/143377l-213x300.jpg" alt='BLUE LOCK VS. U-20 JAPAN'></img>
-              <p>BLUE LOCK VS. U-20 JAPAN</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/145565l-320x452.jpg" alt='Okinawa de Suki'></img>
+              <p>Okinawa de Suki</p>
             </div>
 
             <div 
-            onClick={()=>handleDetail('Chi: Chikyuu no Undou ni Tsuite (Chi: On the Movements of the Earth)')}
+            onClick={()=>handleDetail('NEET Kunoichi to Nazeka')}
             className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144437l-212x300.jpg" alt='Chi: Chikyuu no Undou ni Tsuite (Chi: On the Movements of the Earth)'></img>
-              <p>Chi: Chikyuu no Undou ni Tsuite (Chi: On the Movements of the Earth)</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/143570l-320x453.jpg" alt='NEET Kunoichi to Nazeka'></img>
+              <p>NEET Kunoichi to Nazeka</p>
             </div>
 
             <div 
-            onClick={()=>handleDetail('Ao no Exorcist: Yuki no Hate-hen')}
+            onClick={()=>handleDetail('SAKAMOTO DAYS')}
             className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144043l-213x300.jpg" alt='Ao no Exorcist III parte 2'></img>
-              <p>Ao no Exorcist III parte 2</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/146459l-320x451.jpg" alt='SAKAMOTO DAYS'></img>
+              <p>SAKAMOTO DAYS</p>
             </div>
 
 
             <div 
-            onClick={()=>handleDetail('Ranma1/2')}
+            onClick={()=>handleDetail('A-Rank Party')}
             className="anime">
-              <img src="https://www.intoxianime.com/wp-content/uploads/2024/08/144299l-213x300.jpg" alt='Ranma1/2'></img>
-              <p>Ranma1/2</p>
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/146267l-320x452.jpg" alt='A-Rank Party'></img>
+              <p>A-Rank Party</p>
+            </div>
+
+            <div 
+            onClick={()=>handleDetail('S-Rank Monster no “Behemoth” dakedo')}
+            className="anime">
+              <img src="https://www.intoxianime.com/wp-content/uploads/2024/11/144016l-220x300.jpg" alt='S-Rank Monster no “Behemoth” dakedo'></img>
+              <p>S-Rank Monster no “Behemoth” dakedo</p>
             </div>
 
               </>

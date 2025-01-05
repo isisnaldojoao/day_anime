@@ -110,8 +110,8 @@ export function Anime (){
                     onClick={()=>animeTrailer(anime.attributes.canonicalTitle)}
                     >
                         <CirclePlay/>
-                        Assistir onlinE
-                    </button>
+                        Assistir online
+                    </button>  
                 </div>
             </div>
         </div>
