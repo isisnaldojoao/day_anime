@@ -61,22 +61,11 @@ h1:hover{
   transition: 0.5s;
 }
 
-.menu-anime{
+.menu-anime {
   display: flex;
+  justify-content: center; /* Centraliza no desktop */
   width: 100%;
-  justify-content: center;
-  max-width: 100%;
-  gap: 100%;
 }
-
-.menu-anime nav{
-  display: flex;
-  width: 100%;
-  justify-content: center;
- 
-  max-width: 100%;
-}
-
 
 
 
@@ -311,8 +300,8 @@ button:hover{
   }
 
   .menu-anime {
-    max-width: 100%;
-    margin-left: 20px;
+    justify-content: flex-start; /* Alinha à esquerda no mobile */
+    margin-left: 20px; /* Pequeno espaçamento opcional */
   }
 
   .menu-anime ul{
