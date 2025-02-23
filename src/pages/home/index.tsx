@@ -2,7 +2,6 @@ import { FormEvent, useState} from 'react';
 import { motion } from 'framer-motion';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Search } from 'lucide-react';
 import searchIcon from '../../assets/searchIcon.png'
 import { useNavigate } from 'react-router-dom';
 
