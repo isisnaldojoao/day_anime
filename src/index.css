@@ -1,18 +1,41 @@
 :root{
   --cor-primary:#00A3FF;
-  --cor-second:#fff;
+  --cor-second:#e9e9e9;
+  --cor-third:#1a1a1a;
 }
 
 
-body{
+body.dark {
   padding: 15px;
+  background-color: #1a1a1a;
   font-family: sans-serif;
-  background: #151B26;
-  color: var(--cor-primary);
   align-items: center;
   justify-content: center;
   text-align: center;
   box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+
+body.dark .toggle-theme {
+  color: var(--cor-primary);
+}
+
+body.light {
+  padding: 15px;
+  background-color: var(--cor-primary);
+  font-family: sans-serif;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+body.light .toggle-theme {
+  color: var(--cor-primary);
 }
 
 span{
@@ -42,15 +65,26 @@ h1:hover{
   display: flex;
   width: 100%;
   justify-content: center;
-  max-width: 100%x;
+  max-width: 100%;
+  gap: 100%;
+}
+
+.menu-anime nav{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+ 
+  max-width: 100%;
 }
 
 
-.menu-anime ul{
-  background-color: var(--cor-primary);
-  color: var(--cor-second);
-  width: 650px;
 
+
+/* Estilo comum para o menu */
+.menu-anime ul {
+  background-color: var(--cor-second);
+  color: var(--cor-third);
+  width: 650px;
   height: 50px;
   align-items: center;
   list-style: none;
@@ -58,6 +92,13 @@ h1:hover{
   border-radius: 15px;
   gap: 20px;
 }
+
+/* Estilo para o menu quando o tema escuro está ativo */
+body.dark .menu-anime ul {
+  background-color: var(--cor-second); /* Mudança para cor escura */
+  color: var(--cor-dark-second); /* Cor do texto no tema escuro */
+}
+
 
 .menu-anime a{
   color: inherit;
@@ -249,8 +290,15 @@ button:hover{
   color: #fff;
 }
 
+.toggle-theme{
+  background-color: var(--cor-primary);
+  width: 50px;
+}
+
 
 @media only screen and (max-width: 720px) {
+  
+
   h1{
     width: 200px;
     cursor: pointer;
@@ -263,7 +311,7 @@ button:hover{
   }
 
   .menu-anime {
-    max-width: 80%;
+    max-width: 100%;
     margin-left: 20px;
   }
 
@@ -290,6 +338,7 @@ button:hover{
   }
   
   .icon{
+    max-width: 250px;
     display: flex;
   }
   

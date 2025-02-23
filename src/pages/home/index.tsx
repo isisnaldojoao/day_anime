@@ -1,8 +1,9 @@
 import { FormEvent, useState} from 'react';
-import { motion } from 'framer-motion'; // Importando o motion
+import { motion } from 'framer-motion';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Search } from 'lucide-react'
+import { Search } from 'lucide-react';
+import searchIcon from '../../assets/searchIcon.png'
 import { useNavigate } from 'react-router-dom';
 
 type ActiveDays = {
@@ -74,7 +75,7 @@ export function Home() {
 
 
   return (
-    
+    <main className='calen-container'>
       <div className="calen-animes">
 
         <form className='search-anime' onSubmit={handleSubmit}>
@@ -89,7 +90,10 @@ export function Home() {
             className='button-search'
             type='submit'
           >
-            <Search/>
+            <img
+              src={searchIcon}
+              style={{ width: '40px', height:  '40px' }}
+            />
           </button>
         </form>
 
@@ -447,6 +451,6 @@ export function Home() {
         <div>Feito por<span> João Isisnaldo</span></div>
   
       </div>
-      
+    </main>
   )
 }
