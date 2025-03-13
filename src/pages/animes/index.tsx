@@ -85,7 +85,7 @@ export function Anime (){
     }
 
     function learnManga(manga:string){
-        const url = `https://www.google.com/search?q=${encodeURIComponent(manga)}+ler+manga+mangalivre`;
+        const url = `https://www.google.com/search?q=Ler+${encodeURIComponent(manga)}+cap+1+pt+br+ler+manga+online`;
         window.open(url,'_blank')
     }
     
@@ -94,7 +94,7 @@ export function Anime (){
     return(
         <div className="myAnime">
             <Toaster />
-            <div className="animeMy">
+            <div className="animeMy" >
                 <h1>{anime.attributes.canonicalTitle}</h1>
                 <img src={anime.attributes.posterImage.small}/>
                 <p><strong>Avaliação do anime:</strong>{anime.attributes.averageRating}</p>
