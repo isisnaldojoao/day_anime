@@ -85,7 +85,7 @@ export function Anime (){
     }
 
     function learnManga(manga:string){
-        const url = `https://www.google.com/search?q=Ler+${encodeURIComponent(manga)}+cap+1+pt+br+ler+manga+online`;
+        const url = `https://www.google.com/search?q=Ler+${encodeURIComponent(manga)}+cap+1+pt+br+manga+online`;
         window.open(url,'_blank')
     }
     
