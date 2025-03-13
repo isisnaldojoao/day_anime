@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { useParams,useNavigate } from "react-router-dom";
 import { toast,Toaster } from 'react-hot-toast';
-import { CirclePlus,Trash } from 'lucide-react';
+import { CirclePlus,Trash,BookOpen } from 'lucide-react';
 import { CirclePlay } from 'lucide-react';
 
 const server = 'https://kitsu.io/api/edge';
@@ -83,6 +83,12 @@ export function Anime (){
         const url = `https://www.google.com/search?q=${encodeURIComponent(anime)}+online+hd`;
         window.open(url,'_blank')
     }
+
+    function learnManga(manga:string){
+        const url = `https://www.google.com/search?q=${encodeURIComponent(manga)}+ler+manga+mangalivre`;
+        window.open(url,'_blank')
+    }
+    
     
 
     return(
@@ -111,6 +117,13 @@ export function Anime (){
                     >
                         <CirclePlay/>
                         Assistir online
+                    </button>  
+
+                    <button
+                    onClick={()=>learnManga(anime.attributes.canonicalTitle)}
+                    >
+                        <BookOpen/>
+                        Ler mangá
                     </button>  
                 </div>
             </div>
