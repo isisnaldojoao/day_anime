@@ -234,12 +234,16 @@ button:hover{
 .addAnime{
   align-items: center;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
 }
 
 .addAnime button{
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 600px;
 }
 
 .animeFav{
@@ -248,6 +252,21 @@ button:hover{
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+}
+
+.consumeAnime {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0; /* Garante que o flex não tenha espaçamento entre os itens */
+  width: 100%;
+}
+
+.consumeAnime button {
+  margin: 0; /* Remove possíveis margens padrão */
+  padding: 0; /* Opcional, caso o padding também esteja influenciando */
+  border-radius: 0;
+  width: 200px;
 }
 
 .favAnime{
@@ -430,6 +449,7 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
+    width:200px;
   }
 
   .myAnime{
@@ -446,6 +466,7 @@ button:hover{
     padding: 10px;
     color :#ffff;
   }
+  
   
   .animeFav{
     display: flex;

@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react";
 import { useParams,useNavigate } from "react-router-dom";
 import { toast,Toaster } from 'react-hot-toast';
-import { CirclePlus,Trash,BookOpen } from 'lucide-react';
+import { CirclePlus,Trash,BookOpen,Eye,Download } from 'lucide-react';
 import { CirclePlay } from 'lucide-react';
 
 const server = 'https://kitsu.io/api/edge';
@@ -88,6 +88,11 @@ export function Anime (){
         const url = `https://www.google.com/search?q=Ler+${encodeURIComponent(manga)}+cap+1+pt+br+manga+online`;
         window.open(url,'_blank')
     }
+
+    function animeDowload(anime:string){
+        const url = `https://www.google.com/search?q=${encodeURIComponent(anime)}+baixar+anime`;
+        window.open(url,'_blank')
+    }
     
     
 
@@ -112,19 +117,31 @@ export function Anime (){
                     <Trash/>
                     Remover dos favoritos
                     </button>
-                    <button
-                    onClick={()=>animeTrailer(anime.attributes.canonicalTitle)}
-                    >
-                        <CirclePlay/>
-                        Assistir online
-                    </button>  
+                    <div className="consumeAnime">
+                        <button
+                        onClick={()=>animeTrailer(anime.attributes.canonicalTitle)}
+                        className="buttonWatch"
+                        >
+                            <Eye/>
+                            Assistir online
+                        </button>  
 
-                    <button
-                    onClick={()=>learnManga(anime.attributes.canonicalTitle)}
-                    >
-                        <BookOpen/>
-                        Ler mangá
-                    </button>  
+                        <button
+                        onClick={()=>learnManga(anime.attributes.canonicalTitle)}
+                        className="buttonLearn"
+                        >
+                            <BookOpen/>
+                            Ler mangá
+                        </button>  
+                        <button
+                        onClick={()=>animeDowload(anime.attributes.canonicalTitle)}
+                        className="buttonDownload"
+                        >
+                            <Download/>
+                            Baixar anime
+                        </button>  
+                    </div>
+                    
                 </div>
             </div>
         </div>
