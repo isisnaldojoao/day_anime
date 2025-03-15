@@ -2,7 +2,7 @@ import { useEffect,useState } from "react";
 import { useParams,useNavigate } from "react-router-dom";
 import { toast,Toaster } from 'react-hot-toast';
 import { CirclePlus,Trash,BookOpen,Eye,Download } from 'lucide-react';
-import { CirclePlay } from 'lucide-react';
+
 
 const server = 'https://kitsu.io/api/edge';
 
