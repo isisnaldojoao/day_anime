@@ -1,13 +1,13 @@
 :root{
   --cor-primary:#00A3FF;
-  --cor-second:#e9e9e9;
-  --cor-third:#151b26;
+  --cor-second: rgb(178 162 126 );
+  --cor-third:#fff;
 }
 
 
 body.dark {
   padding: 15px;
-  background-color: #151b26;
+  background: linear-gradient( #1e1e1e,#353535);
   font-family: sans-serif;
   align-items: center;
   justify-content: center;
@@ -19,12 +19,12 @@ body.dark {
 
 
 body.dark .toggle-theme {
-  color: var(--cor-primary);
+  color: var(--cor-second);
 }
 
 body.light {
   padding: 15px;
-  background-color: var(--cor-primary);
+  background: #f9f6f0;
   font-family: sans-serif;
   align-items: center;
   justify-content: center;
@@ -35,7 +35,7 @@ body.light {
 
 
 body.light .toggle-theme {
-  color: var(--cor-primary);
+  color: var(--cor-second);
 }
 
 span{
@@ -85,7 +85,7 @@ h1:hover{
 /* Estilo para o menu quando o tema escuro está ativo */
 body.dark .menu-anime ul {
   background-color: var(--cor-second); /* Mudança para cor escura */
-  color: var(--cor-dark-second); /* Cor do texto no tema escuro */
+  color: var(--cor-third); /* Cor do texto no tema escuro */
 }
 
 
@@ -97,6 +97,7 @@ body.dark .menu-anime ul {
 
 
 .icon{
+  width: 350px;
   display: flex;
 }
 
@@ -134,8 +135,8 @@ button{
   width: 700px;
   margin: 25px;
   height: 40px;
-  background-color:#fff ;
-  color: var(--cor-primary);
+  background-color:var(--cor-second) ;
+  color: #fff;
   border-radius: 15px;
   font-weight: bold;
   font-size: 15px;
@@ -145,8 +146,8 @@ button{
 }
 
 button:hover{
-  background-color:var(--cor-primary) ;
-  color: #fff;
+  background-color:var(--cor-third) ;
+  color: var(--cor-second);
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -173,7 +174,7 @@ button:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--cor-primary);
+  background-color: var(--cor-second);
   border-radius: 5px;
   margin: 0px;
   width: 200px;
@@ -300,7 +301,7 @@ button:hover{
 }
 
 .toggle-theme{
-  background-color: var(--cor-primary);
+  background-color: #212529;
   width: 50px;
 }
 
@@ -347,7 +348,7 @@ button:hover{
   }
   
   .icon{
-    max-width: 250px;
+    width: 250px;
     display: flex;
   }
   
