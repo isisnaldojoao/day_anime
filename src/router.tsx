@@ -4,7 +4,8 @@ import { Home } from './pages/home';
 import { Search } from './pages/search';
 import { Notfound } from './pages/notfound';
 import { Anime } from './pages/animes';
-import { MyAnimes } from './pages/myanimes'
+import { MyAnimes } from './pages/myanimes';
+import { Calender } from './pages/calender';
 
 import { Layout } from './components/layout'
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
             {
                 path: "*",
                 element:<Notfound/>
+            },
+            {
+                path:'/calender',
+                element:<Calender/>
             }
         ]
     }

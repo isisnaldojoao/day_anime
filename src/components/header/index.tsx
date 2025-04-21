@@ -7,7 +7,7 @@ export function Header(){
         <div className='anime-header'>
             <Link to="/">
                 <h1>
-                    <img className='icon' src={image}/>
+                    <img   className='icon' src={image}/>
                 </h1>
             
             </Link>

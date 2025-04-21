@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
 :root{
   --cor-primary:#00A3FF;
   --cor-second: rgb(178 162 126 );
@@ -65,6 +71,7 @@ h1:hover{
   display: flex;
   justify-content: center; /* Centraliza no desktop */
   width: 100%;
+
 }
 
 
@@ -80,6 +87,7 @@ h1:hover{
   display: flex;
   border-radius: 15px;
   gap: 20px;
+  padding: 10px;
 }
 
 /* Estilo para o menu quando o tema escuro está ativo */
@@ -122,12 +130,17 @@ body.dark .menu-anime ul {
 
 .input-anime{
   margin: 20px;
-  width: 600px;
+  width: 500px;
   height: 40px;
   outline: none;
   border-radius: 15px;
   border: none;
   padding: 5px;
+}
+
+.search-anime img{
+  width: 200px;
+  height: 20px;
 }
 
 
@@ -380,6 +393,7 @@ button:hover{
     border: none;
     padding: 5px;
   }
+
 
 
   button {

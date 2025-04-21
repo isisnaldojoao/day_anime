@@ -25,7 +25,7 @@ export function MyAnimes() {
     }
 
     return (
-        <div className='myAnime-fav'>
+        <div className='flex flex-col myAnime-fav items-center'>
             <Toaster/>
             <h1>Animes favoritos</h1>
             {animes.length === 0 ? (

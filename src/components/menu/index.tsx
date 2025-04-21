@@ -25,6 +25,9 @@ export function Menu() {
           <Link to="/">
             <li>Home</li>
           </Link>
+          <Link to="/calender">
+            <li>Calendário</li>
+          </Link>
           <Link to="/myanimes">
             <li>Meus animes</li>
           </Link>

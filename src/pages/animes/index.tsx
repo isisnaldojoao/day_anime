@@ -99,7 +99,7 @@ export function Anime (){
     return(
         <div className="myAnime">
             <Toaster />
-            <div className="animeMy" >
+            <div className="flex flex-col animeMy items-center" >
                 <h1>{anime.attributes.canonicalTitle}</h1>
                 <img src={anime.attributes.posterImage.small}/>
                 <p><strong>Avaliação do anime:</strong>{anime.attributes.averageRating}</p>
