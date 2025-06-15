@@ -1,4 +1,4 @@
-import {  useEffect,useState } from 'react';
+import {  useEffect } from 'react';
 import animesJson from '../../data/animes.json';
 import { WeekDays } from '../../types/weekDays';
 import { useNavigate } from 'react-router-dom';
@@ -15,7 +15,6 @@ const animes: Anime[] = animesJson;
 
 export function Home() {
   const navigate = useNavigate();
-   const [input, setInput] = useState("");
   const getTodayWeekDayId = (): number => {
     const today = new Date();
   
