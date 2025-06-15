@@ -112,24 +112,6 @@ export function Calender() {
     <main className='calen-container'>
       <div className="calen-animes">
 
-        <form className='search-anime' onSubmit={handleSubmit}>
-          <input
-          className='input-anime' 
-          type='text'
-          value={input}
-          onChange={ (e)=> setInput(e.target.value)}
-          placeholder='Digite o nome de um anime...'
-          />
-          <button
-            className='button-search'
-            type='submit'
-          >
-            <img
-              src={searchIcon}
-            />
-          </button>
-        </form>
-
         <motion.div 
         variants={container} 
         initial="hidden" 

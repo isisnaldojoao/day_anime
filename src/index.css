@@ -486,10 +486,7 @@ button:hover{
   .animeFav{
     display: flex;
     max-width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    
+
   }
 
   .favAnime{
@@ -500,8 +497,8 @@ button:hover{
     align-items: center;
     cursor: pointer;
     padding: 10px;
-    background-color: #fff;
     border-radius: 15px;
+    width: 50px;
   }
 
   
