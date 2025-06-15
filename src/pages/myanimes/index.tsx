@@ -26,7 +26,6 @@ interface AnimeData {
 export function MyAnimes() {
   const [animes, setAnimes] = useState<string[]>([]);
   const [infoAnimes, setInfoAnimes] = useState<AnimeData>({ data: [] });
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const myAnimes = localStorage.getItem('anime');
@@ -47,10 +46,9 @@ export function MyAnimes() {
 
         const valid = results.filter((anime) => anime !== undefined);
         setInfoAnimes({ data: valid });
-        setLoading(false); // Corrigido: set false quando carrega
       } catch (err) {
         console.log(err);
-        setLoading(false);
+
       }
     }
 

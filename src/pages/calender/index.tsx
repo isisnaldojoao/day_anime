@@ -1,8 +1,7 @@
-import { FormEvent, useState} from 'react';
+import {  useState} from 'react';
 import { motion } from 'framer-motion';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import searchIcon from '../../assets/searchIcon.png'
 import { useNavigate } from 'react-router-dom';
 
 import animesJson from '../../data/animes.json';
@@ -50,7 +49,6 @@ const item = {
 
 
 export function Calender() {
-  const [input, setInput] = useState("");
   const navigate = useNavigate();
   
   const [todayAnimes, setTodayAnimes] = useState<Record<string, Anime[]>>({
@@ -94,13 +92,6 @@ export function Calender() {
   };
   
   
-  function handleSubmit(e: FormEvent){
-    e.preventDefault();
-
-    if(input === "") return;
-
-    navigate(`/search/${input}`);
-  }
 
   function handleDetail(anime:string){
 
