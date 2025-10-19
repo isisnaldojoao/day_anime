@@ -1,27 +1,14 @@
 // ...existing code...
 import { Link } from "react-router-dom";
-import { useState, useEffect, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export function Menu() {
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem("theme") === "dark";
-  });
+
   const [input, setInput] = useState("");
   const navigate = useNavigate();
 
-  useEffect(() => {
-    // Aplica a classe no body para afetar toda a página
-    document.body.className = darkMode ? "dark" : "light";
-
-    // Salva a preferência no localStorage
-    localStorage.setItem("theme", darkMode ? "dark" : "light");
-  }, [darkMode]);
-
-  const handleThemeToggle = () => {
-    setDarkMode((prevDarkMode) => !prevDarkMode);
-  };
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -70,15 +57,7 @@ export function Menu() {
                 <Search className="text-white" />
               </button>
             </form>
-          {/*
-          <button
-            className="toggle-theme px-3 py-2 rounded-md bg-white/6 hover:bg-white/10 text-white"
-            onClick={handleThemeToggle}
-            aria-label="Alternar tema"
-          >
-            {darkMode ? "☀️" : "🌙"}
-          </button>
-          */}
+
           </div>
         </nav>
       </header>
