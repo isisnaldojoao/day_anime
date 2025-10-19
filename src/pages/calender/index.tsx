@@ -1,9 +1,6 @@
-import {  useState} from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { useNavigate } from 'react-router-dom';
-
 import animesJson from '../../data/animes.json';
 
 type Anime = {
@@ -15,354 +12,118 @@ type Anime = {
 
 const animes: Anime[] = animesJson;
 
-type ActiveDays = {
-  domingo: boolean;
-  segunda: boolean;
-  terca: boolean;
-  quarta: boolean;
-  quinta: boolean;
-  sexta: boolean;
-  sabado: boolean;
-};
+type ActiveDays = Record<string, boolean>;
+
+const daysOfWeek = [
+  { name: 'domingo', label: 'Domingo', id: 7 },
+  { name: 'segunda', label: 'Segunda-feira', id: 1 },
+  { name: 'terca', label: 'Terça-feira', id: 2 },
+  { name: 'quarta', label: 'Quarta-feira', id: 3 },
+  { name: 'quinta', label: 'Quinta-feira', id: 4 },
+  { name: 'sexta', label: 'Sexta-feira', id: 5 },
+  { name: 'sabado', label: 'Sábado', id: 6 },
+];
 
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
     opacity: 1,
     scale: 1,
-    transition: {
-      delayChildren: 0.3,
-      staggerChildren: 0.2
-    }
+    transition: { delayChildren: 0.3, staggerChildren: 0.2 }
   }
-}
-  
+};
+
 const item = {
   hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1
-  }
-}
-
-
-
+  visible: { y: 0, opacity: 1 }
+};
 
 export function Calender() {
   const navigate = useNavigate();
-  
-  const [todayAnimes, setTodayAnimes] = useState<Record<string, Anime[]>>({
-    domingo: [],
-    segunda: [],
-    terca: [],
-    quarta: [],
-    quinta: [],
-    sexta: [],
-    sabado: [],
-  });
 
+  const [todayAnimes, setTodayAnimes] = useState<Record<string, Anime[]>>(
+    daysOfWeek.reduce((acc, day) => ({ ...acc, [day.name]: [] }), {})
+  );
 
-  const [ativeDay,setAtiveDay] =useState<ActiveDays>({
-    domingo: false,
-    segunda: false,
-    terca: false,
-    quarta: false,
-    quinta: false,
-    sexta: false,
-    sabado: false,
-  })
+  const [activeDay, setActiveDay] = useState<ActiveDays>(
+    daysOfWeek.reduce((acc, day) => ({ ...acc, [day.name]: false }), {})
+  );
 
-  
+  const handleActive = (dayName: string, dayId: number) => {
+    setActiveDay(prev => ({ ...prev, [dayName]: !prev[dayName] }));
 
-  
-  const handleAtive = (day: keyof ActiveDays, dayId: number) => {
-    setAtiveDay((prevAtiveDays) => ({
-      ...prevAtiveDays,
-      [day]: !prevAtiveDays[day],
-    }));
-  
-    // Filtra os animes para o dia específico e atualiza a lista para aquele dia
-    const filteredAnimes = animes.filter((anime) => anime.dayId === dayId);
-  
-    // Atualiza a lista de animes para o dia específico
-    setTodayAnimes((prevState) => ({
-      ...prevState,
-      [day]: filteredAnimes,
-    }));
+    const filteredAnimes = animes.filter(anime => anime.dayId === dayId);
+
+    setTodayAnimes(prev => ({ ...prev, [dayName]: filteredAnimes }));
   };
-  
-  
 
-  function handleDetail(anime:string){
-
+  const handleDetail = (anime: string) => {
     navigate(`/anime/${anime}`);
-  }
-
+  };
 
   return (
-    <main className='calen-container'>
-      <div className="calen-animes">
+    <main className="calen-container flex flex-col p-6  min-h-screen">
+      <div className="calen-animes max-w-7xl mx-auto">
+        {/* Botões de dias da semana */}
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {daysOfWeek.map(day => (
+            <motion.button
+              key={day.name}
+              variants={item}
+              onClick={() => handleActive(day.name, day.id)}
+              className={`
+                px-6 py-4 text-lg font-semibold rounded-2xl 
+                border border-white/20 backdrop-blur-md backdrop-saturate-150 
+                ${activeDay[day.name] ? 'bg-white/20 text-white' : 'bg-white/10 text-gray-200'} 
+                hover:bg-white/30 transition duration-300
+              `}
+            >
+              {day.label}
+            </motion.button>
+          ))}
+        </div>
 
-        <motion.div 
-        variants={container} 
-        initial="hidden" 
-        animate="visible" 
-        className="week-animes" >
-        <motion.button 
-        variants={item} 
-        onClick={() => handleAtive('domingo',7)}>Domingo</motion.button>
-          <div className="flex">
-          {ativeDay.domingo && (
-            <>
-              {todayAnimes.domingo.length > 0 ? (
-              <div className='anime-day'>
-                {todayAnimes.domingo.map((anime) => (
+        {/* Animes do dia */}
+        {daysOfWeek.map(day => (
+          activeDay[day.name] && (
+            <motion.div
+              key={day.name}
+              variants={container}
+              initial="hidden"
+              animate="visible"
+              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mb-10"
+            >
+              {todayAnimes[day.name].length > 0 ? (
+                todayAnimes[day.name].map(anime => (
                   <div
-                  onClick={() => handleDetail(anime.anime)}
-                    className="anime"
                     key={anime.id}
+                    onClick={() => handleDetail(anime.anime)}
+                    className="group relative flex flex-col items-center cursor-pointer
+                               bg-white/10 hover:bg-white/20 border border-white/20
+                               backdrop-blur-md backdrop-saturate-150 
+                               p-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 duration-300"
                   >
                     <img
                       src={anime.urlImage}
                       alt={anime.anime}
-                      className="w-400 h-400 object-cover rounded mb-2"
+                      className="w-full h-56 object-cover rounded-lg mb-3 border border-white/20 shadow-md group-hover:shadow-lg transition"
                     />
-                    <strong className="text-sm text-center">{anime.anime}</strong>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p></p>
-            )}
-                  </>
-                )}
-          </div>
-        </motion.div>
+                    <strong className="text-sm sm:text-base text-center text-white font-medium">
+                      {anime.anime}
+                    </strong>
 
-        <motion.div
-        variants={container} 
-        initial="hidden" 
-        animate="visible" 
-        className="week-animes" >
-        <motion.button
-        variants={item} 
-        onClick={() => handleAtive('segunda',1)}>Segunda-feira</motion.button>
-          <div className="flex">
-          {ativeDay.segunda && (
-            <>
-              {todayAnimes.segunda.length > 0 ? (
-              <div className='anime-day'>
-                {todayAnimes.segunda.map((anime) => (
-                  <div
-                  onClick={() => handleDetail(anime.anime)}
-                    className="anime"
-                    key={anime.id}
-                  >
-                    <img
-                      src={anime.urlImage}
-                      alt={anime.anime}
-                      className="w-400 h-400 object-cover rounded mb-2"
-                    />
-                    <strong className="text-sm text-center">{anime.anime}</strong>
+                    {/* Brilho sutil */}
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
-                ))}
-              </div>
-            ) : (
-              <p></p>
-            )}
-                  </>
-                )}
-          </div>
-        </motion.div>
-        
-        <motion.div
-        variants={container} 
-        initial="hidden" 
-        animate="visible"
-        className="week-animes" >
-        <motion.button
-        variants={item}
-        onClick={() => handleAtive('terca',2)}>Terça-feira</motion.button>
-           <div className="flex">
-          {ativeDay.terca && (
-            <>
-              {todayAnimes.terca.length > 0 ? (
-              <div className='anime-day'>
-                {todayAnimes.terca.map((anime) => (
-                  <div
-                  onClick={() => handleDetail(anime.anime)}
-                    className="anime"
-                    key={anime.id}
-                  >
-                    <img
-                      src={anime.urlImage}
-                      alt={anime.anime}
-                      className="w-400 h-400 object-cover rounded mb-2"
-                    />
-                    <strong className="text-sm text-center">{anime.anime}</strong>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p></p>
-            )}
-                  </>
-                )}
-          </div>
-        </motion.div>
-        
+                ))
+              ) : (
+                <p className="text-white col-span-full text-center">Nenhum anime listado</p>
+              )}
+            </motion.div>
+          )
+        ))}
 
-        <motion.div
-        variants={container} 
-        initial="hidden" 
-        animate="visible" 
-        className="week-animes">
-        <motion.button 
-        variants={item}
-        onClick={() => handleAtive('quarta',3)}>Quarta-feira</motion.button>
-          <div className="flex">
-          {ativeDay.quarta && (
-            <>
-              {todayAnimes.quarta.length > 0 ? (
-              <div className='anime-day'>
-                {todayAnimes.quarta.map((anime) => (
-                  <div
-                  onClick={() => handleDetail(anime.anime)}
-                    className="anime"
-                    key={anime.id}
-                  >
-                    <img
-                      src={anime.urlImage}
-                      alt={anime.anime}
-                      className="w-400 h-400 object-cover rounded mb-2"
-                    />
-                    <strong className="text-sm text-center">{anime.anime}</strong>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p></p>
-            )}
-                  </>
-                )}
-          </div>
-        </motion.div>
-        
-
-        <motion.div
-        variants={container} 
-        initial="hidden" 
-        animate="visible"
-        className="week-animes" >
-        <motion.button 
-        variants={item}
-        onClick={() => handleAtive('quinta',4)}>Quinta-feira</motion.button>
-           <div className="flex">
-          {ativeDay.quinta && (
-            <>
-              {todayAnimes.quinta.length > 0 ? (
-              <div className='anime-day'>
-                {todayAnimes.quinta.map((anime) => (
-                  <div
-                  onClick={() => handleDetail(anime.anime)}
-                    className="anime"
-                    key={anime.id}
-                  >
-                    <img
-                      src={anime.urlImage}
-                      alt={anime.anime}
-                      className="w-400 h-400 object-cover rounded mb-2"
-                    />
-                    <strong className="text-sm text-center">{anime.anime}</strong>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p></p>
-            )}
-                  </>
-                )}
-          </div>
-        </motion.div>
-        
-
-        <motion.div 
-        variants={container} 
-        initial="hidden" 
-        animate="visible" 
-        className="week-animes"  >
-        <motion.button
-        variants={item}
-        onClick={() => handleAtive('sexta',5)}>Sexta-feira</motion.button>
-           <div className="flex">
-          {ativeDay.sexta && (
-            <>
-              {todayAnimes.sexta.length > 0 ? (
-              <div className='anime-day'>
-                {todayAnimes.sexta.map((anime) => (
-                  <div
-                  onClick={() => handleDetail(anime.anime)}
-                    className="anime"
-                    key={anime.id}
-                  >
-                    <img
-                      src={anime.urlImage}
-                      alt={anime.anime}
-                      className="w-400 h-400 object-cover rounded mb-2"
-                    />
-                    <strong className="text-sm text-center">{anime.anime}</strong>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p></p>
-            )}
-                  </>
-                )}
-          </div>
-        </motion.div>
-        
-
-        <motion.div
-        variants={container} 
-        initial="hidden" 
-        animate="visible"
-        className="week-animes" >
-        <motion.button
-        variants={item}
-        onClick={() => handleAtive('sabado',6)}>Sabado</motion.button>
-           <div className="flex">
-          {ativeDay.sabado && (
-            <>
-              {todayAnimes.sabado.length > 0 ? (
-              <div className='anime-day'>
-                {todayAnimes.sabado.map((anime) => (
-                  <div
-                  onClick={() => handleDetail(anime.anime)}
-                    className="anime"
-                    key={anime.id}
-                  >
-                    <img
-                      src={anime.urlImage}
-                      alt={anime.anime}
-                      className="w-400 h-400 object-cover rounded mb-2"
-                    />
-                    <strong className="text-sm text-center">{anime.anime}</strong>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <p></p>
-            )}
-                  </>
-                )}
-          </div>
-          
-        </motion.div>
-
-        <div>Feito por<span> João Isisnaldo</span></div>
-  
       </div>
     </main>
-  )
+  );
 }

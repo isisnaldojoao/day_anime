@@ -13,7 +13,7 @@
 
 body.dark {
   padding: 15px;
-  background: linear-gradient( #1e1e1e,#353535);
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
   font-family: sans-serif;
   align-items: center;
   justify-content: center;
@@ -44,9 +44,7 @@ body.light .toggle-theme {
   color: var(--cor-second);
 }
 
-span{
-  color: var(--cor-second);
-}
+
 
 h1{
   cursor: pointer;
@@ -143,26 +141,6 @@ body.dark .menu-anime ul {
   height: 20px;
 }
 
-
-button{
-  width: 700px;
-  margin: 25px;
-  height: 40px;
-  background-color:var(--cor-second) ;
-  color: #fff;
-  border-radius: 15px;
-  font-weight: bold;
-  font-size: 15px;
-  border:none;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-button:hover{
-  background-color:var(--cor-third) ;
-  color: var(--cor-second);
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
-}
 
 .calen-animes{
   width: 100%;

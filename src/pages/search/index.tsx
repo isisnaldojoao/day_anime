@@ -30,7 +30,6 @@ export function Search() {
       try {
         const response = await fetch(`${server}/anime?filter[text]=${anime}`);
         const data: AnimeData = await response.json();
-        console.log(data);
         setInfoAnimes(data);
         setLoading(false);
       } catch (err) {
@@ -48,38 +47,39 @@ export function Search() {
 
   if (loading) {
     return (
-      <main className="flex justify-center items-center min-h-screen">
-        <h1 className="text-xl font-bold">Carregando...</h1>
+      <main className="flex justify-center items-center min-h-screen bg-gray-900">
+        <h1 className="text-xl font-bold text-white">Carregando...</h1>
       </main>
     );
   }
 
   return (
-    <main className="flex justify-center min-h-screen">
-      <div className="p-4 rounded-md w-full max-w-4xl">
-        <div className="bg-white border-radius rounded-lg p-2 font-bold mb-4">
-          Resultado da busca para a busca: {anime}
+    <main className="flex justify-center min-h-screen p-6">
+      <div className="w-full max-w-6xl">
+        <div className="text-white font-bold mb-6 text-lg">
+          Resultado da busca: <span className="text-green-400">{anime}</span>
         </div>
 
         {infoAnimes.data.length > 0 ? (
-          <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+          <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {infoAnimes.data.map((anime) => (
               <div
                 key={anime.id}
                 onClick={() => handleDetail(anime.attributes.canonicalTitle)}
-                className="cursor-pointer flex flex-col items-center 
-                           bg-white/20 backdrop-blur-md backdrop-saturate-150 
-                           p-3 rounded-md hover:scale-105 
-                           transition-transform duration-300 ease-in-out shadow-md"
+                className="group relative flex flex-col items-center cursor-pointer
+                           bg-white/10 border border-white/20 
+                           backdrop-blur-md backdrop-saturate-150
+                           p-4 rounded-2xl shadow-lg transition-transform 
+                           transform hover:scale-105 duration-300"
               >
                 <img
                   src={anime.attributes.posterImage.small}
                   alt={anime.attributes.canonicalTitle}
-                  className="rounded mb-2"
+                  className="w-full h-56 object-cover rounded-lg mb-3 border border-white/20 shadow-md group-hover:shadow-lg transition"
                 />
-                <p className="text-white text-center font-semibold">
+                <strong className="text-white text-center text-sm sm:text-base font-semibold mb-1">
                   {anime.attributes.canonicalTitle}
-                </p>
+                </strong>
                 <p className="text-white text-sm">
                   <strong>Episódios:</strong> {anime.attributes.episodeCount}
                 </p>
@@ -89,11 +89,14 @@ export function Search() {
                     ? "Finalizado"
                     : "Em Lançamento"}
                 </p>
+
+                {/* Brilho sutil */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </section>
         ) : (
-          <p className="text-white">Nenhum anime encontrado.</p>
+          <p className="text-white text-center mt-10">Nenhum anime encontrado.</p>
         )}
       </div>
     </main>

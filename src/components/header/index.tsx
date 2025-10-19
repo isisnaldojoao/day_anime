@@ -4,10 +4,10 @@ import image from '../../assets/day_anime.png';
 
 export function Header(){
     return(
-        <div className='anime-header'>
+        <div className='flex items-center justify-center m-10'>
             <Link to="/">
-                <h1>
-                    <img   className='icon' src={image}/>
+                <h1 className='text-white text-5xl'>
+                    Otakus <span className='text-blue-500 font-bold'>Perdidos</span>
                 </h1>
             
             </Link>

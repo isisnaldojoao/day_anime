@@ -101,69 +101,83 @@ export function Anime (){
     }
    
     return(
-        <div className="w-full myAnime min-h-screen">
-            <Toaster />
-            <div className="flex animeMy justify-start items-start" >
-                {/* Poster Image */}
-                <div className="w-1/2" >
-                    <img src={anime.attributes.posterImage.small}/>
-                </div>
+      <div className="w-full min-h-screen flex flex-col items-center p-4">
+  <Toaster />
 
-                {/* Details */}
-                <div className="w-1/2 text-white p-4 ">
-                    <div className="flex flex-col ">
-                        <h1><strong>Nome do anime:</strong> {anime.attributes.canonicalTitle}</h1>
-                        <p><strong>Avaliação do anime:</strong>{formatRating(anime.attributes.averageRating)}</p>
-                        <p><strong>Status:</strong>{anime.attributes.status === "finished" ? "Finalizado" : "Em Lançamento"}</p>
-                    </div>
-                    <div className="flex flex-col ">
-                        <button
-                        className="w-[250px] h-10  bg-green-500 text-white rounded mt-2 flex justify-center items-center"
-                        onClick={()=>addFav(anime.attributes.canonicalTitle)}
-                        >
-                        <Star/>
-                        Adicionar aos favoritos
-                        </button> 
-                        <button
-                        className="w-[250px] h-10  bg-red-500 text-white rounded mt-2 flex justify-center items-center"
-                        onClick={()=>removeFav(anime.attributes.canonicalTitle)}
-                        >
-                        <Trash/>
-                        Remover dos favoritos
-                        </button>
-                       
-                        
-                    </div>
-                </div>
-            </div>
 
-            {/* Action buttons */}
-            <div className="flex consumeAnime mt-5">
-                    <button
-                    onClick={()=>animeTrailer(anime.attributes.canonicalTitle)}
-                    className="flex justify-center items-center "
-                    >
-                        <Eye/>
-                        Assistir online
-                    </button>  
+  <div className="w-full max-w-6xl flex flex-col lg:flex-row gap-8">
 
-                    <button
-                    onClick={()=>learnManga(anime.attributes.canonicalTitle)}
-                    className="flex justify-center items-center "
-                    >
-                        <BookOpen/>
-                        Ler mangá
-                    </button>  
-                    <button
-                    onClick={()=>animeDowload(anime.attributes.canonicalTitle)}
-                    className="flex justify-center items-center "
-                    >
-                        <Download/>
-                        Baixar anime
-                    </button>  
-            </div>
+    <div className="w-full lg:w-1/2 flex justify-center">
+      <img
+        src={anime.attributes.posterImage.small}
+        alt={anime.attributes.canonicalTitle}
+        className="rounded-lg shadow-lg"
+      />
+    </div>
 
-            {/*Trailer*/}
-        </div>
+    <div className="w-full lg:w-1/2 text-white flex flex-col justify-between">
+      <div className="space-y-3">
+        <h1 className="text-2xl font-bold">
+          Nome do anime: <span className="font-normal">{anime.attributes.canonicalTitle}</span>
+        </h1>
+        <p>
+          Avaliação do anime:{" "}
+          <span className="font-medium">{formatRating(anime.attributes.averageRating)}</span>
+        </p>
+        <p>
+          Status:{" "}
+          <span className="font-medium">
+            {anime.attributes.status === "finished" ? "Finalizado" : "Em Lançamento"}
+          </span>
+        </p>
+      </div>
+
+      <div className="mt-6 flex flex-col sm:flex-row gap-4">
+        <button
+          className="flex items-center justify-center gap-2 w-full sm:w-[200px] h-10 bg-green-500 hover:bg-green-600 rounded"
+          onClick={() => addFav(anime.attributes.canonicalTitle)}
+        >
+          <Star />
+          Adicionar aos favoritos
+        </button>
+
+        <button
+          className="flex items-center justify-center gap-2 w-full sm:w-[200px] h-10 bg-red-500 hover:bg-red-600 rounded"
+          onClick={() => removeFav(anime.attributes.canonicalTitle)}
+        >
+          <Trash />
+          Remover dos favoritos
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center w-full max-w-6xl">
+    <button
+      onClick={() => animeTrailer(anime.attributes.canonicalTitle)}
+      className="flex items-center justify-center gap-2 w-full sm:w-[200px] h-10 bg-blue-500 hover:bg-blue-600 text-white rounded"
+    >
+      <Eye />
+      Assistir online
+    </button>
+
+    <button
+      onClick={() => learnManga(anime.attributes.canonicalTitle)}
+      className="flex items-center justify-center gap-2 w-full sm:w-[200px] h-10 bg-indigo-500 hover:bg-indigo-600 text-white rounded"
+    >
+      <BookOpen />
+      Ler mangá
+    </button>
+
+    <button
+      onClick={() => animeDowload(anime.attributes.canonicalTitle)}
+      className="flex items-center justify-center gap-2 w-full sm:w-[200px] h-10 bg-gray-700 hover:bg-gray-800 text-white rounded"
+    >
+      <Download />
+      Baixar anime
+    </button>
+  </div>
+</div>
+
     )
 }
