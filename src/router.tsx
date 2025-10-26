@@ -8,6 +8,10 @@ import { MyAnimes } from './pages/myanimes';
 import { Calender } from './pages/calender';
 
 import { Layout } from './components/layout'
+import { LoginPage } from './pages/login';
+import { ProfilePage } from './pages/profile';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { Recomendations } from './pages/recomendations';
 
 const router = createBrowserRouter([
     {
@@ -27,7 +31,11 @@ const router = createBrowserRouter([
             },
             {
                 path:"/myanimes",
-                element: <MyAnimes/>
+                element: (
+                <ProtectedRoute>
+                    <MyAnimes/>
+                </ProtectedRoute>
+                )
             },
             {
                 path: "*",
@@ -36,6 +44,26 @@ const router = createBrowserRouter([
             {
                 path:'/calender',
                 element:<Calender/>
+            },
+            {
+                path:'/login',
+                element:<LoginPage/>
+            },
+            {
+                path:'/profile',
+                element:(
+                 <ProtectedRoute>
+                    <ProfilePage/>
+                </ProtectedRoute>
+                )
+            },
+            {
+                path: '/recomendations',
+                element: (
+                    <ProtectedRoute>    
+                        <Recomendations/>
+                    </ProtectedRoute>
+                )   
             }
         ]
     }

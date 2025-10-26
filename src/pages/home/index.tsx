@@ -50,7 +50,7 @@ export function Home() {
   }
 
   return (
-    <main className="flex justify-center items-center min-h-screen bg-gradient-to-bpx-4">
+    <main className="flex justify-center items-center min-h-screen bg-gradient-to-bpx-4 m-10">
       <div className="w-full max-w-5xl">
         <header className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 rounded-xl py-3 mb-6 shadow-lg">
           <h1 className="text-lg sm:text-xl font-semibold text-white">

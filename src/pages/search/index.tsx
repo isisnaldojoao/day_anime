@@ -47,7 +47,7 @@ export function Search() {
 
   if (loading) {
     return (
-      <main className="flex justify-center items-center min-h-screen bg-gray-900">
+      <main className="flex justify-center items-center min-h-screen ">
         <h1 className="text-xl font-bold text-white">Carregando...</h1>
       </main>
     );

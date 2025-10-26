@@ -6,7 +6,6 @@ export function Header(){
                 <h1 className='text-white text-5xl'>
                     Otakus <span className='text-blue-500 font-bold'>Perdidos</span>
                 </h1>
-            
             </Link>
         </div>
     )
