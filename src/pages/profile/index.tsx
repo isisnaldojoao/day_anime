@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
-import { auth, storage } from "../../firebaseConfig";
-import { onAuthStateChanged, updateProfile } from "firebase/auth";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { auth } from "../../firebaseConfig";
+import { onAuthStateChanged } from "firebase/auth";
 import  barusu  from '../../assets/38ae4ac6c3104b60b0fd3afb4e36442b.jpg';
 
 export function ProfilePage() {
   const [user, setUser] = useState<any>(null);
-  const [displayName, setDisplayName] = useState("");
-  const [photo, setPhoto] = useState<File | null>(null);
-  const [preview, setPreview] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
+  const [, setDisplayName] = useState("");
 
   // 🔍 Carrega o usuário atual do Firebase Auth
   useEffect(() => {
@@ -17,42 +13,11 @@ export function ProfilePage() {
       setUser(currentUser);
       if (currentUser) {
         setDisplayName(currentUser.displayName || "");
-        setPreview(currentUser.photoURL || null);
       }
     });
     return () => unsubscribe();
   }, []);
 
-  const handleUpload = async () => {
-    if (!photo || !user) return;
-    setLoading(true);
-
-    try {
-      const storageRef = ref(storage, `users/${user.uid}/profile.jpg`);
-      await uploadBytes(storageRef, photo);
-      const downloadURL = await getDownloadURL(storageRef);
-
-      await updateProfile(user, {
-        displayName,
-        photoURL: downloadURL,
-      });
-
-      alert("Perfil atualizado com sucesso!");
-      setPreview(downloadURL);
-    } catch (error) {
-      console.error("Erro ao atualizar perfil:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      setPhoto(file);
-      setPreview(URL.createObjectURL(file));
-    }
-  };
 
   if (!user) {
     return (
