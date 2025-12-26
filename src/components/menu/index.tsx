@@ -34,7 +34,7 @@ export function Menu() {
 
   return (
     <div className="flex flex-col items-center justify-between text-black w-full">
-      <header className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 rounded-xl py-3 mb-6 shadow-lg w-full max-w-5xl px-4">
+      <header className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 rounded-xl py-3  shadow-lg w-full max-w-5xl px-4">
         <nav className="flex items-center justify-center gap-6 w-full">
           <ul className="flex items-center gap-6 text-white">
             <li className="flex transform items-center justify-center transition-all hover:scale-110">
