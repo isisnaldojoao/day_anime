@@ -1,115 +1,116 @@
-import { useEffect, useState } from 'react';
-import { toast, Toaster } from 'react-hot-toast';
-import { Trash } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Heart, Play, Trash2 } from "lucide-react";
+import { toast, Toaster } from "react-hot-toast";
+import animesJson from "../../data/animes.json";
 
-const server = 'https://kitsu.io/api/edge';
+const server = "https://kitsu.io/api/edge";
 
-interface animeName {
-  id: string;
-  attributes: {
-    canonicalTitle: string;
-    episodeCount: number;
-    status: string;
-    posterImage: {
-      small: string;
-    };
-    description: string;
-    averageRating: string;
-  };
-}
+type Favorite = {
+  title: string;
+  image?: string;
+  rating?: string;
+};
 
-interface AnimeData {
-  data: animeName[];
-}
+type LocalAnime = {
+  anime: string;
+  urlImage: string;
+};
+
+const localAnimes = animesJson as LocalAnime[];
 
 export function MyAnimes() {
-  const [animes, setAnimes] = useState<string[]>([]);
-  const [infoAnimes, setInfoAnimes] = useState<AnimeData>({ data: [] });
+  const [favorites, setFavorites] = useState<Favorite[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const myAnimes = localStorage.getItem('anime');
-    const parsedAnimes: string[] = myAnimes ? JSON.parse(myAnimes) : [];
-    setAnimes(parsedAnimes);
-  }, []);
+    const titles: string[] = JSON.parse(localStorage.getItem("anime") || "[]");
 
-  useEffect(() => {
-    async function getAnime() {
-      try {
-        const results = await Promise.all(
-          animes.map(async (anime) => {
-            const response = await fetch(`${server}/anime?filter[text]=${encodeURIComponent(anime)}`);
-            const data = await response.json();
-            return data.data[0];
-          })
-        );
+    async function loadFavorites() {
+      const results = await Promise.all(
+        titles.map(async (title): Promise<Favorite> => {
+          const local = localAnimes.find((anime) => anime.anime === title);
+          if (local) return { title, image: local.urlImage };
 
-        const valid = results.filter((anime) => anime !== undefined);
-        setInfoAnimes({ data: valid });
-      } catch (err) {
-        console.log(err);
+          try {
+            const response = await fetch(
+              `${server}/anime?filter[text]=${encodeURIComponent(title)}&page[limit]=1`
+            );
+            const result = await response.json();
+            const anime = result.data?.[0]?.attributes;
+            return {
+              title,
+              image: anime?.posterImage?.large || anime?.posterImage?.small,
+              rating: anime?.averageRating,
+            };
+          } catch {
+            return { title };
+          }
+        })
+      );
 
-      }
+      setFavorites(results);
+      setLoading(false);
     }
 
-    getAnime();
-  }, [animes]);
+    loadFavorites();
+  }, []);
 
-  function removeFav(anime: string) {
-    const favAnimes = JSON.parse(localStorage.getItem('anime') || '[]');
-    const updateAnimes = favAnimes.filter((favAnimes: string) => favAnimes !== anime);
-    localStorage.setItem('anime', JSON.stringify(updateAnimes));
-    setAnimes(updateAnimes);
-    toast.success('Anime removido dos favoritos!');
+  function removeFavorite(title: string) {
+    const updated = favorites.filter((anime) => anime.title !== title);
+    setFavorites(updated);
+    localStorage.setItem("anime", JSON.stringify(updated.map((anime) => anime.title)));
+    toast.success("Anime removido da sua lista.");
   }
 
-  
-
   return (
-    <main className="flex justify-center min-h-screen ">
-      <div className="w-full max-w-2xl p-4 text-center">
-        <Toaster />
-        <h1 className="text-2xl text-white font-bold m-2">Animes favoritos</h1>
+    <main className="site-panel favorites-page">
+      <Toaster />
+      <section className="mx-auto max-w-6xl">
+        <div className="favorites-heading">
+          <div>
+            <span className="section-kicker">SUA COLEÇÃO</span>
+            <h1 className="section-title">MINHA <span>LISTA</span></h1>
+          </div>
+          <div className="favorites-count">
+            <Heart size={18} fill="currentColor" />
+            {favorites.length} {favorites.length === 1 ? "ANIME" : "ANIMES"}
+          </div>
+        </div>
 
-        {infoAnimes.data.length === 0 ? (
-          <div className="flex flex-col items-center justify-center text-white mt-8">
-            <img src="https://i.imgur.com/F5LghWq.png" className="w-64 mb-4" />
-            <p className="text-lg">Você ainda não adicionou nenhum anime</p>
+        {loading ? (
+          <p className="favorites-message">Carregando sua lista...</p>
+        ) : favorites.length === 0 ? (
+          <div className="favorites-empty">
+            <Heart size={54} />
+            <h2>Sua lista está vazia</h2>
+            <p>Explore o calendário e adicione os animes que deseja acompanhar.</p>
+            <Link to="/calender">EXPLORAR CALENDÁRIO</Link>
           </div>
         ) : (
-         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {infoAnimes.data.map((anime) => (
-                <section
-                key={anime.id}
-                className="flex flex-col items-center 
-                            bg-white/20 backdrop-blur-md backdrop-saturate-150 
-                            p-3 rounded-md text-white shadow-md transition-transform 
-                            hover:scale-105 duration-300 ease-in-out
-                            "
-                >
-                <Link
-                    to={`/anime/${anime.attributes.canonicalTitle}`}
-                    className="text-center hover:underline"
-                >
-                    <img
-                    src={anime.attributes.posterImage.small}
-                    alt={anime.attributes.canonicalTitle}
-                    className="rounded mb-2"
-                    />
-                    <strong className='normal-case'>{anime.attributes.canonicalTitle}</strong>
+          <div className="favorites-grid">
+            {favorites.map((anime) => (
+              <article className="favorite-card" key={anime.title}>
+                <Link to={`/anime/${encodeURIComponent(anime.title)}`}>
+                  <div className="favorite-cover">
+                    {anime.image ? (
+                      <img src={anime.image} alt={anime.title} />
+                    ) : (
+                      <div className="favorite-placeholder"><Heart /></div>
+                    )}
+                    <div className="card-overlay" />
+                    <span className="favorite-play"><Play fill="currentColor" /></span>
+                  </div>
+                  <h2>{anime.title}</h2>
                 </Link>
-                <button
-                    className="w-10 h-10 bg-red-500 text-white rounded mt-2 flex justify-center items-center"
-                    onClick={() => removeFav(anime.attributes.canonicalTitle)}
-                >
-                    <Trash />
+                <button onClick={() => removeFavorite(anime.title)} aria-label={`Remover ${anime.title}`}>
+                  <Trash2 size={17} /> REMOVER
                 </button>
-                </section>
+              </article>
             ))}
-            </div>
-
+          </div>
         )}
-      </div>
+      </section>
     </main>
   );
 }

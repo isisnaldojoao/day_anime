@@ -1,96 +1,88 @@
-import { useEffect } from "react";
-import animesJson from "../../data/animes.json";
-import { WeekDays } from "../../types/weekDays";
+import { ArrowRight, CalendarDays, Play } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { CalendarCheck } from "lucide-react";
+import animesJson from "../../data/animes.json";
 
 type Anime = {
   id: number;
   anime: string;
   dayId: number;
   urlImage: string;
+  premiere: string;
 };
 
 const animes: Anime[] = animesJson;
 
 export function Home() {
   const navigate = useNavigate();
-
-  const getTodayWeekDayId = (): number => {
-    const today = new Date();
-
-    const mapDias: Record<string, keyof typeof WeekDays> = {
-      domingo: "Domingo",
-      "segunda-feira": "Segunda",
-      "terça-feira": "Terça",
-      "quarta-feira": "Quarta",
-      "quinta-feira": "Quinta",
-      "sexta-feira": "Sexta",
-      sábado: "Sábado",
-    };
-
-    const diaSemana = today
-      .toLocaleDateString("pt-BR", { weekday: "long" })
-      .toLowerCase();
-    const diaEnum = mapDias[diaSemana];
-
-    return WeekDays[diaEnum] ?? 0;
-  };
-
-  const todayAnimes = animes.filter(
-    (anime) => anime.dayId === getTodayWeekDayId()
-  );
-
-  useEffect(() => {
-    console.log("Animes de hoje:", todayAnimes);
-  }, [todayAnimes]);
-
-  function handleDetail(anime: string) {
-    navigate(`/anime/${anime}`);
-  }
+  const jsDay = new Date().getDay();
+  const todayId = jsDay === 0 ? 7 : jsDay;
+  const todayAnimes = animes.filter((anime) => anime.dayId === todayId);
+  const featured = animes.slice(0, 3);
 
   return (
-    <main className="flex justify-center min-h-screen pt-6 px-4">
+    <main className="site-panel min-h-screen px-4 py-8 sm:px-8">
+      <section className="mx-auto max-w-6xl">
+        <div className="mb-10">
+          <div className="mb-5 flex items-end justify-between">
+            <div>
+              <span className="section-kicker">DESTAQUES DA TEMPORADA</span>
+              <h1 className="section-title">NOVOS ANIMES EM <span>2026</span></h1>
+            </div>
+            <button className="text-link" onClick={() => navigate("/calender")}>
+              VER CALENDÁRIO <ArrowRight size={16} />
+            </button>
+          </div>
 
-      <div className="w-full max-w-5xl">
-        <header className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 rounded-xl py-3 mb-6 shadow-lg">
-          <h1 className="text-lg sm:text-xl font-semibold text-white">
-            Animes transmitidos hoje
-          </h1>
-          <CalendarCheck className="text-green-400 w-5 h-5" />
-        </header>
-
-        {todayAnimes.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {todayAnimes.map((anime) => (
-              <div
+          <div className="featured-grid">
+            {featured.map((anime, index) => (
+              <article
                 key={anime.id}
-                onClick={() => handleDetail(anime.anime)}
-                className="group relative flex flex-col items-center cursor-pointer
-                          bg-white/10 hover:bg-white/20 border border-white/20
-                          backdrop-blur-md backdrop-saturate-150 
-                          p-3 rounded-2xl shadow-lg transition-transform transform hover:scale-105 duration-300"
+                className={index === 1 ? "featured-card featured-main" : "featured-card"}
+                onClick={() => navigate(`/anime/${encodeURIComponent(anime.anime)}`)}
               >
-                <img
-                  src={anime.urlImage}
-                  alt={anime.anime}
-                  className="w-full h-56 object-cover rounded-lg mb-3 border border-white/20 shadow-md group-hover:shadow-lg transition"
-                />
-                <strong className="text-sm sm:text-base text-center text-white font-medium">
-                  {anime.anime}
-                </strong>
+                <img src={anime.urlImage} alt={anime.anime} />
+                <div className="featured-shade" />
+                <div className="featured-copy">
+                  <span>ESTREIA {anime.premiere}</span>
+                  <h2>{anime.anime}</h2>
+                  <button>
+                    <Play size={15} fill="currentColor" /> VER DETALHES
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
 
-                {/* Brilho sutil */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
+        <div className="mb-5 flex items-end justify-between border-b border-white/15 pb-3">
+          <div>
+            <span className="section-kicker">PROGRAMAÇÃO DIÁRIA</span>
+            <h2 className="section-title text-2xl">ANIMES DE <span>HOJE</span></h2>
+          </div>
+          <CalendarDays className="text-red-500" />
+        </div>
+
+        {todayAnimes.length ? (
+          <div className="anime-grid compact">
+            {todayAnimes.map((anime) => (
+              <article
+                key={anime.id}
+                className="anime-card"
+                onClick={() => navigate(`/anime/${encodeURIComponent(anime.anime)}`)}
+              >
+                <div className="relative overflow-hidden">
+                  <img src={anime.urlImage} alt={anime.anime} loading="lazy" />
+                  <div className="card-overlay" />
+                  <span className="premiere-badge">{anime.premiere}</span>
+                </div>
+                <h3>{anime.anime}</h3>
+              </article>
             ))}
           </div>
         ) : (
-          <p className="text-center text-gray-300 mt-10">
-            Não há animes sendo transmitidos hoje.
-          </p>
+          <p className="py-16 text-center text-white/50">Não há animes programados para hoje.</p>
         )}
-      </div>
+      </section>
     </main>
   );
 }

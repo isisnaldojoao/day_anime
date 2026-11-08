@@ -1,61 +1,478 @@
 [
-  { "id": 1, "anime": "Fist of the North Star", "dayId": 1, "urlImage": "https://cdn.myanimelist.net/images/anime/1911/150747.jpg" },
-  { "id": 2, "anime": "My Hero Academia: Vigilantes Season 2", "dayId": 1, "urlImage": "https://cdn.myanimelist.net/images/anime/1592/154049.jpg" },
-  { "id": 3, "anime": "Golden Kamuy Final Season", "dayId": 1, "urlImage": "https://cdn.myanimelist.net/images/anime/1809/136686.jpg" },
-  { "id": 4, "anime": "Wash It All Away", "dayId": 1, "urlImage": "https://cdn.myanimelist.net/images/anime/1940/154234.jpg" },
-  { "id": 5, "anime": "You Can’t Be In a Rom-Com with Your Childhood Friends!", "dayId": 1, "urlImage": "https://cdn.myanimelist.net/images/anime/1729/153502.jpg" },
-  { "id": 6, "anime": "’Tis Time for “Torture,” Princess 2", "dayId": 1, "urlImage": "https://cdn.myanimelist.net/images/anime/1272/153326.jpg" },
-
-  { "id": 7, "anime": "The Demon King’s Daughter is Too Kind!!", "dayId": 2, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/150643l-320x459.jpg" },
-  { "id": 8, "anime": "Isekai Office Worker", "dayId": 2, "urlImage": "https://cdn.myanimelist.net/images/anime/1510/153806.jpg" },
-  { "id": 9, "anime": "Tune In to the Midnight Heart", "dayId": 2, "urlImage": "https://cdn.myanimelist.net/images/anime/1769/152823.jpg" },
-  { "id": 10, "anime": "There was a Cute Girl in the Hero’s Party", "dayId": 2, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/150881l-320x450.jpg" },
-  { "id": 11, "anime": "Yoroi-Shinden Samurai Troopers", "dayId": 2, "urlImage": "https://a.storyblok.com/f/178900/848x1200/22d5b07519/samurai-troopers-new-anime-group-visual.jpg/m/filters:quality(95)format(webp)" },
-  { "id": 12, "anime": "THE DARWIN INCIDENT", "dayId": 2, "urlImage": "https://cdn.myanimelist.net/images/anime/1341/152829.jpg" },
-  { "id": 13, "anime": "【OSHI NO KO】Season 3", "dayId": 2, "urlImage": "https://cdn.myanimelist.net/images/anime/1979/153329.jpg" },
-
-  { "id": 14, "anime": "Tamon’s B-Side", "dayId": 3, "urlImage": "https://cdn.myanimelist.net/images/anime/1474/153320.jpg" },
-  { "id": 15, "anime": "Jack-of-All-Trades, Party of None", "dayId": 3, "urlImage": "https://cdn.myanimelist.net/images/anime/1486/153135.jpg" },
-  { "id": 16, "anime": "The Case Book of Arne", "dayId": 3, "urlImage": "https://cdn.myanimelist.net/images/anime/1112/152731.jpg" },
-  { "id": 17, "anime": "An Adventurer’s Daily Grind at Age 29", "dayId": 3, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/151882l-320x453.jpg" },
-  { "id": 18, "anime": "Easygoing Territory Defense by the Optimistic Lord", "dayId": 3, "urlImage": "https://cdn.myanimelist.net/images/anime/1264/153908.jpg" },
-  { "id": 19, "anime": "SHIBOYUGI: Playing Death Games to Put Food on the Table", "dayId": 3, "urlImage": "https://cdn.myanimelist.net/images/anime/1215/153630.jpg" },
-  { "id": 20, "anime": "Hell Teacher: Jigoku Sensei Nube Part 2", "dayId": 3, "urlImage": "https://cdn.myanimelist.net/images/anime/1361/153968.jpg" },
-  { "id": 21, "anime": "A Gentle Noble’s Vacation Recommendation", "dayId": 3, "urlImage": "https://cdn.myanimelist.net/images/anime/1968/152396.jpg" },
-
-  { "id": 22, "anime": "MF Ghost 3", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1419/154458.jpg" },
-  { "id": 23, "anime": "Chained Soldier 2", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1668/148737.jpg" },
-  { "id": 24, "anime": "The Invisible Man and His Soon-to-Be Wife", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1033/152494.jpg" },
-  { "id": 25, "anime": "The Holy Grail of Eris", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1655/153574.jpg" },
-  { "id": 26, "anime": "Jujutsu Kaisen: The Culling Game Part 1", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1127/154488.jpg" },
-  { "id": 27, "anime": "Roll Over and Die", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1360/153435.jpg" },
-  { "id": 28, "anime": "Anyway, I’m Falling in Love with You. Season 2", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1054/153719.jpg" },
-  { "id": 29, "anime": "Champignon Witch", "dayId": 4, "urlImage": "https://cdn.myanimelist.net/images/anime/1499/152613.jpg" },
-
-  { "id": 30, "anime": "High School! Kimengumi", "dayId": 5, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/152667l-320x453.jpg" },
-  { "id": 31, "anime": "Dark Moon", "dayId": 5, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/152040l-320x453.jpg" },
-  { "id": 32, "anime": "Hell Mode", "dayId": 5, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/152479l-320x453.jpg" },
-  { "id": 33, "anime": "Fire Force Season 3 Part 2", "dayId": 5, "urlImage": "https://cdn.myanimelist.net/images/anime/1508/152472.jpg" },
-  { "id": 34, "anime": "Frieren 2", "dayId": 5, "urlImage": "https://cdn.myanimelist.net/images/anime/1921/154528.jpg" },
-
-  { "id": 35, "anime": "Sentenced to Be a Hero", "dayId": 6, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/151911l-320x453.jpg" },
-  { "id": 36, "anime": "Saioshi no Gikei wo Mederu tame", "dayId": 6, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/152470l-320x453.jpg" },
-  { "id": 37, "anime": "Fate/strange Fake", "dayId": 6, "urlImage": "https://cdn.myanimelist.net/images/anime/1752/150192.jpg" },
-  { "id": 38, "anime": "Reincarnated as a Dragon Hatchling", "dayId": 6, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/G5oKbwraUAAtSHh-320x453.jpg" },
-  { "id": 39, "anime": "TRIGUN STARGAZE", "dayId": 6, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/152508l-320x453.jpg" },
-  { "id": 40, "anime": "Dead Account", "dayId": 6, "urlImage": "https://cdn.myanimelist.net/images/anime/1622/154192.jpg" },
-  { "id": 41, "anime": "A Misanthrope Teaches a Class for Demi-Humans", "dayId": 6, "urlImage": "https://cdn.myanimelist.net/images/anime/1210/151933.jpg" },
-  { "id": 42, "anime": "Scum of the Brave", "dayId": 6, "urlImage": "https://cdn.myanimelist.net/images/anime/1821/154043.jpg" },
-  { "id": 43, "anime": "Medalist 2", "dayId": 6, "urlImage": "https://cdn.myanimelist.net/images/anime/1882/154115.jpg" },
-
-  { "id": 44, "anime": "Hana-Kimi", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1490/152041.jpg" },
-  { "id": 45, "anime": "Kunon the Sorcerer Can See", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1704/154459.jpg" },
-  { "id": 46, "anime": "Journal with Witch", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1791/154233.jpg" },
-  { "id": 47, "anime": "Noble Reincarnation", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1629/153722.jpg" },
-  { "id": 48, "anime": "The Daily Life of a Part-Time Torturer", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1721/153380.jpg" },
-  { "id": 49, "anime": "In the Clear Moonlit Dusk", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1999/154569.jpg" },
-  { "id": 50, "anime": "You and I Are Polar Opposites", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1140/154457.jpg" },
-  { "id": 51, "anime": "Kaya-chan isn’t Scary", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1194/153705.jpg" },
-  { "id": 52, "anime": "The Villainess Is Adored by the Prince", "dayId": 7, "urlImage": "https://cdn.myanimelist.net/images/anime/1383/151284.jpg" },
-  { "id": 54, "anime": "Hell’s Paradise 2", "dayId": 7, "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/140418l-320x452.jpg" }
+  {
+    "id": 1,
+    "anime": "Black Clover 2",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/12/G8hmLD2b0AAgPD0.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 2,
+    "anime": "Tensei Shitara Ken Deshita 2",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/07/GvBBlqEWIAAbdcv.jpg",
+    "premiere": "27/09"
+  },
+  {
+    "id": 3,
+    "anime": "Tokyo Revengers 4",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/03/Gmmni9MaEAI5pS_-1086x1536.jpg",
+    "premiere": "02/10"
+  },
+  {
+    "id": 4,
+    "anime": "Kikansha no Mahou wa Tokubetsu Desu II (A Returner’s Magic Should Be Special II)",
+    "dayId": 3,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HKNnzHKbMAADNSM.jpg",
+    "premiere": "07/10"
+  },
+  {
+    "id": 5,
+    "anime": "Cyberpunk Edgerunners II",
+    "dayId": 2,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HL0Q6UZXkAAa4xv-819x1024.jpg",
+    "premiere": "20/10"
+  },
+  {
+    "id": 6,
+    "anime": "Tensei Kizoku, Kantei Skill de Nariagaru III (As a Reincarnated Aristocrat, I’ll Use My Appraisal Skill to Rise in the World III)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/04/HFN4LtLbkAA1-EQ-1088x1536.jpg",
+    "premiere": "27/09"
+  },
+  {
+    "id": 7,
+    "anime": "Dragon Ball Super: Beerus",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/01/G_e1-pWacAA8cZX-1086x1536.jpg",
+    "premiere": "11/10"
+  },
+  {
+    "id": 8,
+    "anime": "Sasaki to Pichan II(Sasaki and Peeps II)",
+    "dayId": 3,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HK2IHk_bkAANQ4F-1077x1536.jpg",
+    "premiere": "07/10"
+  },
+  {
+    "id": 9,
+    "anime": "Tougen Anki II",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/12/G9GpEayacAI4fFO-725x1024.jpg",
+    "premiere": "02/10"
+  },
+  {
+    "id": 10,
+    "anime": "Hyouken no Majutsushi ga Sekai wo Suberu 2 (The Iceblade Sorcerer Shall 2)",
+    "dayId": 4,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/05/HI6fIHPbUAAYlAL-731x1024.jpg",
+    "premiere": "08/10"
+  },
+  {
+    "id": 11,
+    "anime": "Tensei Shita Daiseijo wa, Seijo de Aru Koto wo Hitakakusu (A Tale of the Secret Saint)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/03/GmeGQNSakAA5uha-727x1024.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 12,
+    "anime": "Mahou Kishi Rayearth (Magic Knight Rayearth)",
+    "dayId": 3,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2024/07/GRak9jma4AALY6z-729x1024.jpeg",
+    "premiere": "07/10"
+  },
+  {
+    "id": 13,
+    "anime": "Yozakura-san Chi no Daisakusen II parte 2 (Mission: Yozakura Family II parte 2)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/155783l-213x300.jpg",
+    "premiere": "11/10"
+  },
+  {
+    "id": 14,
+    "anime": "Psyren",
+    "dayId": 1,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/12/G8I2WkSbEAElI0Q-724x1024.jpg",
+    "premiere": "05/10"
+  },
+  {
+    "id": 15,
+    "anime": "Kyouran Reijou Nia Liston (Nia Liston: The Merciless Maiden)",
+    "dayId": 2,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HOTjmfNaQAAlxL8-724x1024.jpg",
+    "premiere": "06/10"
+  },
+  {
+    "id": 16,
+    "anime": "Mezametara Saikyou Soubi to Uchuusen (Reborn as a Space Mercenary: I Woke Up Piloting the Strongest Starship!)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HEF07ZlakAAYne6-1024x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 17,
+    "anime": "Magical★Explorer",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HOh2bkIbQAA4JSD-724x1024.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 18,
+    "anime": "Overgeared (Tempal: Item no Chikara)",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HMWam4_bMAAX6n_-724x1024.jpg",
+    "premiere": "02/10"
+  },
+  {
+    "id": 19,
+    "anime": "Shuiro no Kamen (The Vermillion Mask)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HEWjwkHbYAAuoGh-724x1024.jpg",
+    "premiere": "10/10"
+  },
+  {
+    "id": 20,
+    "anime": "Sensha Isu (Tank Chair)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HDqYeNoagAA1kwT-743x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 21,
+    "anime": "Tsuihou Sareta Cheat Fuyo Majutsushi (The Laid-Off Cheat-Granting Mage Enjoys a New Life ou Chi-Fuyo)",
+    "dayId": 2,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/1781084045-3a1c4f3b7f91a58e469115f01a00827f-722x1024.jpg",
+    "premiere": "06/10"
+  },
+  {
+    "id": 22,
+    "anime": "Zombie Sagashitemasu (#I’m Looking For Zombie)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HDwcaF9aQAAgpZc-724x1024.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 23,
+    "anime": "Sekai Saikyou no Majo, Hajimemashita (I Became the World’s Strongest Witch)",
+    "dayId": 3,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/157162l.jpg",
+    "premiere": "07/10"
+  },
+  {
+    "id": 24,
+    "anime": "Yasei no Last Boss ga Arawareta! II (A Wild Last Boss Appeared! II)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/145050l-223x300.jpg",
+    "premiere": "26/09"
+  },
+  {
+    "id": 25,
+    "anime": "Suikoden",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/08/gxfr9flasaajx0i4070123588718142596.jpeg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 26,
+    "anime": "Kashita Maryoku wa [Ribo Harai] de Kyousei (Magic Repo Man: Dumped by My Party, I’ll Cash In With a Cute Support Fairy to Become the Strongest!)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/G5hdYT6bcAUB-GB-725x1024.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 27,
+    "anime": "Shinja Zero no Megami-sama to Hajimeru Isekai Kouryaku (Full Clearing Another World under a Goddess with Zero Believers)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/158876l.jpg",
+    "premiere": "11/10"
+  },
+  {
+    "id": 28,
+    "anime": "Kanata Kara (From Far Away)",
+    "dayId": 1,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HNGPXT8a8AAHif6-775x1024.jpg",
+    "premiere": "05/10"
+  },
+  {
+    "id": 29,
+    "anime": "Tensei Goblin dakedo Shitsumon Aru? (So What’s Wrong with Getting Reborn as a Goblin?)",
+    "dayId": 1,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HDC4J57bUAA10BO-727x1024.jpg",
+    "premiere": "05/10"
+  },
+  {
+    "id": 30,
+    "anime": "Vertex Force",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HN-zYTmbQAAVy9q-724x1024.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 31,
+    "anime": "Marronnier Ookoku no Shichinin no Kishi (The Seven Knights of the Marronnier Kingdom)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HJt2OVeakAAuJ5E-724x1024.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 32,
+    "anime": "Battle Spirits [Re]: Zekkai no Kuu",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/156315l.jpg",
+    "premiere": "06/11"
+  },
+  {
+    "id": 33,
+    "anime": "Twisted-Wonderland II",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HOOEX41bkAAYGA4-724x1024.jpg",
+    "premiere": "06/11"
+  },
+  {
+    "id": 34,
+    "anime": "Demon’s Crest",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HMa8gJma0AAI0to-724x1024.jpg",
+    "premiere": "06/11"
+  },
+  {
+    "id": 35,
+    "anime": "Kaijuu No.8 Narumi no Heijitsu (Narumi’s Weekday)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/05/1780134863-3df81fb17a5931b58ebf6b8402a5dcc8-768x1024.jpg",
+    "premiere": "05/09"
+  },
+  {
+    "id": 36,
+    "anime": "Dark Machine",
+    "dayId": 2,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/153763l-215x300.jpg",
+    "premiere": "13/10"
+  },
+  {
+    "id": 37,
+    "anime": "Romelia Senki (A History of the Romelia: Even After Defeating the Demon King, Humanit)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/11/G5T9Fk0aUAATNT2-725x1024.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 38,
+    "anime": "Toaru Anbu no Item",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/02/HBrr85lbgAs_oCt-1087x1536.jpg",
+    "premiere": "09/10"
+  },
+  {
+    "id": 39,
+    "anime": "Spare me Great Lord 3",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/147112l-215x300.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 40,
+    "anime": "Dandivine",
+    "dayId": 4,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/160013l-212x300.jpg",
+    "premiere": "08/10"
+  },
+  {
+    "id": 41,
+    "anime": "Horror Collector",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/filters_quality95formatwebp-1-212x300.webp",
+    "premiere": "10/10"
+  },
+  {
+    "id": 42,
+    "anime": "Paw & Palaces",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/filters_quality95formatwebp-212x300.webp",
+    "premiere": "10/10"
+  },
+  {
+    "id": 43,
+    "anime": "Seitokai ni mo Ana wa Aru! (There is Also a Hole in the Student Organization!)",
+    "dayId": 6,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/HMWv6M5b0AAGIWP.jpg",
+    "premiere": "03/10"
+  },
+  {
+    "id": 44,
+    "anime": "Choujun! Choujou-senpai (Super Psychic Policeman Chojo)",
+    "dayId": 2,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HLEI391aUAA-Pc6.jpg",
+    "premiere": "06/10"
+  },
+  {
+    "id": 45,
+    "anime": "Ojisan wa Kawaii Mono ga Osuki (Older Men Like Cute Things)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HOhJf-ZbsAER43c-721x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 46,
+    "anime": "Koori no Jouheki II (The Ramparts of Ice II)",
+    "dayId": 4,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HMMu_wFbwAA9hnd.jpg",
+    "premiere": "01/10"
+  },
+  {
+    "id": 47,
+    "anime": "Ranma ½ III",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/1784984038-fe13eb2ce145e37b404b82a6bbe176ee.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 48,
+    "anime": "Mouse Cursor de Genjitsu o Sousa Dekiru You ni Natta node, Onna no Ko o Ippai Click Shima~su (Click Me All Over)",
+    "dayId": 1,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/159767l-212x300.jpg",
+    "premiere": "05/10"
+  },
+  {
+    "id": 49,
+    "anime": "Shiotaiou no Satou-san ga Ore ni dake Amai (The Salt-God Satou-san is Only Sweet To Me!)",
+    "dayId": 2,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HLq97UJaoAAy6tn-724x1024.jpg",
+    "premiere": "06/10"
+  },
+  {
+    "id": 50,
+    "anime": "Yowaki MAX Reijou nanoni (Even Though She’s a Timid Young Lady to the Max, She Agreed to Her Shrewd Fiancé’s Bet)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/10/G3NeofJagAA8LhC-724x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 51,
+    "anime": "Dark Summoner to Dekiteiru (I’m Dating a Dark Summoner!)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HKkejqxawAA79R4-690x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 52,
+    "anime": "Kusuriya no Hitorigoto III",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/10/G32m0bOXYAETx9O.jpg",
+    "premiere": "02/10"
+  },
+  {
+    "id": 53,
+    "anime": "Chitose-kun wa Ramune Bin no Naka (Chitose Is in the Ramune Bottle)",
+    "dayId": 2,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/152043l.jpg",
+    "premiere": "13/10"
+  },
+  {
+    "id": 54,
+    "anime": "Ao no Hako II (Blue Box II)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HEbfcvDbcAEt0Gk.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 55,
+    "anime": "Fool Night",
+    "dayId": 4,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HLIOpEYbEAALlm2-686x1024.jpg",
+    "premiere": "26/11"
+  },
+  {
+    "id": 56,
+    "anime": "Tantei wa Mou, Shindeiru II(The Detective Is Already Dead II)",
+    "dayId": 3,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/04/HFJMl83bgAAOL-9.jpg",
+    "premiere": "07/10"
+  },
+  {
+    "id": 57,
+    "anime": "Hotaru no Yomeiri (Firefly Wedding)",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HEPEUWUbcAAr8Un-725x1024.jpg",
+    "premiere": "09/10"
+  },
+  {
+    "id": 58,
+    "anime": "Doumo, Suki na hito ni Horegusuri wo Iraisareta Majo desu (Hi, I’m a Witch, and My Crush Wants Me to Make a Love Potion)",
+    "dayId": 1,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/HDWWPPIaMAI6rMJ-724x1024.jpg",
+    "premiere": "05/10"
+  },
+  {
+    "id": 59,
+    "anime": "Mahou Shoujo Ikusei Keikaku II",
+    "dayId": 1,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2025/10/G3sKMFGWkAA9WwY-724x1024.jpg",
+    "premiere": "05/10"
+  },
+  {
+    "id": 60,
+    "anime": "FX Senshi Kurumi-chan (FX Fighter Kurumi-chan)",
+    "dayId": 4,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/01/G_A-VbKaQAAIZpu-724x1024.jpg",
+    "premiere": "01/10"
+  },
+  {
+    "id": 61,
+    "anime": "Hotel Inhumans II",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/03/news-260306-1-723x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 62,
+    "anime": "Kizu Darake Seijo Yori Houfuku wo Komete (With Vengeance, Sincerely, Your Broken Saintess)",
+    "dayId": 5,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/158664l.jpg",
+    "premiere": "02/10"
+  },
+  {
+    "id": 63,
+    "anime": "Mahou no Shimai Lulutto Lilly Parte 2 (Magical Sisters Lulutto Lilly Parte 2)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/09/158588l-212x300.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 64,
+    "anime": "Kanojo no Tomodachi (My Girlfriend’s Friend)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HMhOPHdaIAALmxE-721x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 65,
+    "anime": "Tetsuryou! Meet with Tetsudou Musume ( Tetsuryo! Meet with Railroad Girls )",
+    "dayId": 4,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/152350l.jpg",
+    "premiere": "08/10"
+  },
+  {
+    "id": 66,
+    "anime": "Hitozukiai ga Nigate na Miboujin no Yuki Onna-san to Noroi no Yubiwa (The Shy Snow Woman and the Cursed Ring)",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/07/HOhgp0Da8AA7IKx-724x1024.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 67,
+    "anime": "Ao Ashi II",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/06/HLp7hLabkAAzVtq-1086x1536.jpg",
+    "premiere": "04/10"
+  },
+  {
+    "id": 68,
+    "anime": "Diamond no Ace: Act II",
+    "dayId": 7,
+    "urlImage": "https://www.intoxianime.com/wp-content/uploads/2026/08/158770l.jpg",
+    "premiere": "11/10"
+  }
 ]

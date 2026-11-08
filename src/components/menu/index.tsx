@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useState, useEffect, FormEvent } from "react";
-import { Drum, Search, Home, CalendarDays, List } from "lucide-react";
-import { onAuthStateChanged } from "firebase/auth";
+import { FormEvent, useEffect, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { CalendarDays, Heart, LogIn, Search, User } from "lucide-react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
 
 export function Menu() {
@@ -9,88 +9,47 @@ export function Menu() {
   const [user, setUser] = useState<any>(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log("👀 Iniciando listener de autenticação...");
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("📢 Estado de autenticação mudou:", currentUser);
-      setUser(currentUser);
-    });
+  useEffect(() => onAuthStateChanged(auth, setUser), []);
 
-    return () => {
-      console.log("🧹 Limpando listener de autenticação");
-      unsubscribe();
-    };
-  }, []);
-
-  useEffect(() => {
-    console.log("🔄 Valor de user atualizado:", user);
-  }, [user]);
-
-  function handleSubmit(e: FormEvent) {
-    e.preventDefault();
-    if (input === "") return;
-    navigate(`/search/${input}`);
+  function handleSubmit(event: FormEvent) {
+    event.preventDefault();
+    if (input.trim()) navigate(`/search/${encodeURIComponent(input.trim())}`);
   }
 
   return (
-    <div className="flex flex-col items-center justify-between text-black w-full">
-      <header className="flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md backdrop-saturate-150 border border-white/20 rounded-xl py-3  shadow-lg w-full max-w-5xl px-4">
-        <nav className="flex items-center justify-center gap-6 w-full">
-          <ul className="flex items-center gap-6 text-white">
-            <li className="flex transform items-center justify-center transition-all hover:scale-110">
-              <Link className="flex gap-2" to="/">
-                Home
-                <Home />
-              </Link>
-            </li>
+    <header className="main-header">
+      <div className="header-inner">
+        <Link to="/" className="brand" aria-label="Otakus Perdidos">
+          OTAKUS<span>PERDIDOS</span>
+        </Link>
 
-            <li className="flex transform items-center justify-center transition-all hover:scale-110">
-              <Link className="flex gap-2" to="/calender">
-                Calendário
-                <CalendarDays />
-              </Link>
-            </li>
-
-            {/* 👇 Só aparece se estiver logado */}
-            {user ? (
-              <>
-                <li className="flex transform items-center justify-center transition-all hover:scale-110">
-                  <Link className="flex gap-2" to="/myanimes">
-                    Meus animes
-                    <List />
-                  </Link>
-                </li>
-
-                <li className="flex transform items-center justify-center transition-all hover:scale-110">
-                  <Link className="flex gap-2" to="/recomendations">
-                    Recomendações
-                    <Drum />
-                  </Link>
-                </li>
-              </>
-            ) : null}
-          </ul>
-
-          <div className="ml-auto flex items-center gap-3">
-            <form className="flex items-center gap-2" onSubmit={handleSubmit}>
-              <input
-                className="bg-white/5 text-white placeholder:text-white/60 px-3 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
-                type="text"
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Digite o nome de um anime..."
-              />
-              <button
-                className="flex items-center justify-center w-10 h-10 bg-white/6 hover:bg-white/10 rounded-md"
-                type="submit"
-                aria-label="Pesquisar anime"
-              >
-                <Search className="text-white" />
-              </button>
-            </form>
-          </div>
+        <nav className="main-nav">
+          <NavLink to="/" end>HOME</NavLink>
+          <NavLink to="/calender"><CalendarDays size={15} /> CALENDÁRIO</NavLink>
+          {user && <NavLink to="/myanimes"><Heart size={15} /> MINHA LISTA</NavLink>}
         </nav>
-      </header>
-    </div>
+
+        <div className="header-actions">
+          <form onSubmit={handleSubmit} className="header-search">
+            <input
+              value={input}
+              onChange={(event) => setInput(event.target.value)}
+              placeholder="Buscar anime..."
+              aria-label="Buscar anime"
+            />
+            <button aria-label="Pesquisar"><Search size={19} /></button>
+          </form>
+
+          {user ? (
+            <div className="user-menu">
+              <Link to="/profile" title="Perfil"><User size={20} /></Link>
+              <button onClick={() => signOut(auth)}>SAIR</button>
+            </div>
+          ) : (
+            <Link to="/login" className="login-link"><LogIn size={18} /> ENTRAR</Link>
+          )}
+        </div>
+      </div>
+    </header>
   );
 }

@@ -8,7 +8,10 @@ import Snowfall from 'react-snowfall';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-     <Snowfall style={{ zIndex: 0, position: 'fixed', top: 0, left: 0, pointerEvents: 'none' }}/>
+     <Snowfall
+       snowflakeCount={90}
+       style={{ zIndex: 30, position: 'fixed', inset: 0, pointerEvents: 'none' }}
+     />
     <Toaster />
     <App />
   </React.StrictMode>,

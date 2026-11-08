@@ -1,51 +1,77 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { CalendarDays, ChevronRight, Heart, LogOut, Mail, User } from "lucide-react";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../../firebaseConfig";
-import { onAuthStateChanged } from "firebase/auth";
-import  barusu  from '../../assets/38ae4ac6c3104b60b0fd3afb4e36442b.jpg';
+import fallbackAvatar from "../../assets/38ae4ac6c3104b60b0fd3afb4e36442b.jpg";
 
 export function ProfilePage() {
   const [user, setUser] = useState<any>(null);
-  const [, setDisplayName] = useState("");
+  const [loading, setLoading] = useState(true);
+  const favoriteCount = JSON.parse(localStorage.getItem("anime") || "[]").length;
 
-  // 🔍 Carrega o usuário atual do Firebase Auth
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-      if (currentUser) {
-        setDisplayName(currentUser.displayName || "");
-      }
-    });
-    return () => unsubscribe();
-  }, []);
+  useEffect(() => onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+    setLoading(false);
+  }), []);
 
+  if (loading) {
+    return <main className="site-panel profile-state">Carregando perfil...</main>;
+  }
 
   if (!user) {
     return (
-      <main className="flex justify-center items-center min-h-screen text-white">
-        <h2>Você precisa estar logado para acessar esta página.</h2>
+      <main className="site-panel profile-state">
+        <User size={42} />
+        <h2>Você precisa entrar para acessar seu perfil.</h2>
+        <Link to="/login">ENTRAR AGORA</Link>
       </main>
     );
   }
 
-  return (
-    <main className="flex justify-center items-center  text-white">
-      <section className="flex flex-col items-center justify-center bg-white/10 p-10 rounded-2xl shadow-lg w-[90%] max-w-lg text-center">
-        <h1 className="text-2xl font-bold mb-4">Meu Perfil</h1>
+  const createdAt = user.metadata?.creationTime
+    ? new Date(user.metadata.creationTime).toLocaleDateString("pt-BR", { month: "long", year: "numeric" })
+    : "recentemente";
 
-        <div>
-          <h1><span className="font-bold">Nome:</span> {user.displayName}</h1>
+  return (
+    <main className="site-panel profile-page">
+      <section className="profile-card">
+        <div className="profile-banner">
+          <span>OTAKUS<span>PERDIDOS</span></span>
+        </div>
+        <div className="profile-main">
+          <img
+            className="profile-avatar"
+            src={user.photoURL || fallbackAvatar}
+            alt={user.displayName || "Avatar"}
+          />
+          <div className="profile-identity">
+            <span className="section-kicker">MEU PERFIL</span>
+            <h1>{user.displayName || "Otaku Perdido"}</h1>
+            <p><Mail size={15} /> {user.email}</p>
+          </div>
+          <button className="profile-logout" onClick={() => signOut(auth)}>
+            <LogOut size={17} /> SAIR
+          </button>
         </div>
 
-        <img src={barusu} alt="Preview" className="w-15 h-15 rounded-xl mb-4 mx-auto" />
+        <div className="profile-stats">
+          <div><strong>{favoriteCount}</strong><span>ANIMES NA LISTA</span></div>
+          <div><strong>2026</strong><span>TEMPORADA ATUAL</span></div>
+          <div><strong>{createdAt}</strong><span>MEMBRO DESDE</span></div>
+        </div>
 
-        <div className="mt-6">
-            <h2 className="font-bold">Serviços:</h2>
-            <button
-            onClick={() => alert("Em breve: seus favoritos!")}
-            className="text-blue-400 bg-white p-2 rounded-lg p-4 mt-2 hover:bg-white/80 transition"
-            >
-            Ver meus favoritos
-          </button>
+        <div className="profile-links">
+          <Link to="/myanimes">
+            <span className="profile-link-icon"><Heart /></span>
+            <span><strong>Minha lista</strong><small>Veja e gerencie seus animes favoritos</small></span>
+            <ChevronRight />
+          </Link>
+          <Link to="/calender">
+            <span className="profile-link-icon"><CalendarDays /></span>
+            <span><strong>Calendário 2026</strong><small>Acompanhe os lançamentos da semana</small></span>
+            <ChevronRight />
+          </Link>
         </div>
       </section>
     </main>
